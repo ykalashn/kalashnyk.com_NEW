@@ -23,11 +23,12 @@
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="navbar navbar-light bg-transparent py-3 position-fixed top-0 w-100" style="backdrop-filter:saturate(140%) blur(6px)">
+  <nav class="navbar navbar-light bg-transparent py-3 position-fixed top-0 w-100" style="backdrop-filter:saturate(140%) blur(6px); z-index: 1050;">
     <div class="container">
       <a class="navbar-brand fw-semibold" href="index.html">Yevhenii Kalashnyk</a>
-      <div class="d-flex align-items-center gap-2">
-        <a class="nav-btn text-decoration-none" href="projects.html">Selected works <i class="bi bi-arrow-up-right ms-1"></i></a>
+      <div class="d-flex align-items-center gap-4">
+        <a class="text-decoration-none" href="about.html">About</a>
+        <a class="text-decoration-none active" href="index.html#projects">Projects</a>
       </div>
     </div>
   </nav>
@@ -52,19 +53,19 @@
   <section class="py-4 bg-light border-bottom">
     <div class="container col-xxl-9 px-3 px-md-4 content-narrow">
       <div class="row g-4">
-        <div class="col-6">
+        <div class="col-6 col-lg-5">
           <small class="text-secondary">Role</small>
           <div class="fw-semibold">UX designer & co‑creator</div>
         </div>
-        <div class="col-6">
+        <div class="col-6 col-lg-5">
           <small class="text-secondary">Team</small>
           <div class="fw-semibold">4 people: storytelling, growth, backend, UX</div>
         </div>
-        <div class="col-6">
+        <div class="col-6 col-lg-5">
           <small class="text-secondary">Timeline</small>
           <div class="fw-semibold">48 hours prototype + pitch</div>
         </div>
-        <div class="col-6">
+        <div class="col-6 col-lg-5">
           <small class="text-secondary">Status</small>
           <div class="fw-semibold">Prototype (project no longer active)</div>
         </div>
@@ -284,34 +285,34 @@
       <!-- Present each mention as its own card with an icon and short description.  This
            layout feels more curated than a plain list of links. -->
       <div class="row g-4">
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6">
           <div class="p-3 bg-white border rounded-3 shadow-soft h-100 d-flex">
-            <div class="me-3"><i class="bi bi-newspaper fs-3 text-primary"></i></div>
+            <div class="me-3"><i class="bi bi-journal-code fs-3 text-primary"></i></div>
             <div>
               <h3 class="h6 mb-1"><a href="https://www.hive.fi/en/article/student-project-tassu-passu/" target="_blank" rel="noreferrer" class="text-decoration-none">Hive Helsinki</a></h3>
               <p class="small mb-0 text-secondary">Student project: Tassu&nbsp;Passu</p>
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6">
           <div class="p-3 bg-white border rounded-3 shadow-soft h-100 d-flex">
-            <div class="me-3"><i class="bi bi-globe fs-3 text-primary"></i></div>
+            <div class="me-3"><i class="bi bi-newspaper fs-3 text-primary"></i></div>
             <div>
               <h3 class="h6 mb-1"><a href="https://www.mikkelinkaupunkilehti.fi/paikalliset/4012505" target="_blank" rel="noreferrer" class="text-decoration-none">Mikkelin Kaupunkilehti</a></h3>
               <p class="small mb-0 text-secondary">Local Finnish feature on Tassu Passu</p>
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6">
           <div class="p-3 bg-white border rounded-3 shadow-soft h-100 d-flex">
-            <div class="me-3"><i class="bi bi-award fs-3 text-primary"></i></div>
+            <div class="me-3"><i class="bi bi-newspaper fs-3 text-primary"></i></div>
             <div>
               <h3 class="h6 mb-1"><a href="https://www.osterbottenstidning.fi/Artikel/Visa/333807" target="_blank" rel="noreferrer" class="text-decoration-none">Österbottens Tidning</a></h3>
               <p class="small mb-0 text-secondary">Reporting on our €10k win</p>
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6">
           <div class="p-3 bg-white border rounded-3 shadow-soft h-100 d-flex">
             <div class="me-3"><i class="bi bi-journal-code fs-3 text-primary"></i></div>
             <div>
@@ -320,7 +321,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6">
           <div class="p-3 bg-white border rounded-3 shadow-soft h-100 d-flex">
             <div class="me-3"><i class="bi bi-camera-video fs-3 text-primary"></i></div>
             <div>
@@ -333,13 +334,13 @@
     </div>
   </section>
   <!-- OTHER PROJECTS -->
-  <section class="py-5 bg-light">
-    <div class="container col-xxl-9 px-3 px-md-4 content-narrow">
+  <section class="py-5 bg-light border-top">
+    <div class="container col-xxl-9 px-3 px-md-4">
       <h2 class="h3 mb-4">Other projects</h2>
       <div class="row g-4">
         <!-- Uplift card -->
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="card shadow-soft rounded-3xl h-100">
+          <div class="card shadow-sm border-0 rounded-4 h-100">
             <img src="images/uplift-illustration.webp" class="card-img-top" alt="Uplift illustration">
             <div class="card-body d-flex flex-column">
               <h3 class="h6 card-title">Uplift</h3>
@@ -350,7 +351,7 @@
         </div>
         <!-- OmaOtos card -->
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="card shadow-soft rounded-3xl h-100">
+          <div class="card shadow-sm border-0 rounded-4 h-100">
             <img src="images/omaotos-illustration.png" class="card-img-top" alt="OmaOtos illustration">
             <div class="card-body d-flex flex-column">
               <h3 class="h6 card-title">OmaOtos</h3>
@@ -369,8 +370,8 @@
       <p class="text-secondary mb-4">Email me, connect on LinkedIn, or check my GitHub.</p>
       <div class="d-flex flex-wrap gap-2 justify-content-center">
         <a class="btn btn-dark rounded-pill" href="mailto:hello@kalashnyk.com"><i class="bi bi-envelope me-1"></i>Email</a>
-        <a class="btn btn-outline-dark rounded-pill" target="_blank" rel="noreferrer" href="https://www.linkedin.com/"><i class="bi bi-linkedin me-1"></i>LinkedIn</a>
-        <a class="btn btn-outline-dark rounded-pill" target="_blank" rel="noreferrer" href="https://github.com/"><i class="bi bi-github me-1"></i>GitHub</a>
+        <a class="btn btn-outline-dark rounded-pill" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/ykalashn"><i class="bi bi-linkedin me-1"></i>LinkedIn</a>
+        <a class="btn btn-outline-dark rounded-pill" target="_blank" rel="noreferrer" href="https://github.com/ykalashn"><i class="bi bi-github me-1"></i>GitHub</a>
       </div>
     </div>
   </section>

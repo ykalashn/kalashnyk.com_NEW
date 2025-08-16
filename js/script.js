@@ -1,5 +1,4 @@
-// Custom JavaScript for cookie consent, analytics and optional lazy image loading
-// This script mirrors the behaviour of the dark‑themed site but is reused here.
+
 
 document.addEventListener('DOMContentLoaded', function () {
   // Insert current year into any footer span with id beginning with 'year'
@@ -25,14 +24,13 @@ document.addEventListener('DOMContentLoaded', function () {
     if (window.gtag) return;
     var scriptTag = document.createElement('script');
     scriptTag.setAttribute('async', '');
-    // NOTE: replace G-XXXXXXXX with your own Google Analytics measurement ID.
-    scriptTag.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX';
+    scriptTag.src = 'https://www.googletagmanager.com/gtag/js?id=G-4KTXJGHKBG';
     document.head.appendChild(scriptTag);
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     window.gtag = gtag;
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXX');
+    gtag('config', 'G-4KTXJGHKBG');
   }
 
   // Show banner if consent not given
@@ -56,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
     loadAnalytics();
   }
 
-  // Lazy loading for images (optional)
+  // Lazy loading for images
   var lazyImages = document.querySelectorAll('img[data-src]');
   if ('IntersectionObserver' in window) {
     var observer = new IntersectionObserver(function (entries, obs) {
@@ -81,8 +79,4 @@ document.addEventListener('DOMContentLoaded', function () {
       img.removeAttribute('data-src');
     });
   }
-
-  // Dynamic project loading functionality has been removed.  All projects
-  // are now defined directly in the HTML for greater stability and to
-  // maintain a consistent grid layout across breakpoints.
 });
