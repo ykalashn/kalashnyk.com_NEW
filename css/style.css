@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+:root {
+  /* Soft, modern, masculine */
+  --brand-primary: #0f172a;
+  /* slate-900 */
+  --brand-ink: #111827;
+  /* gray-900 */
+  --brand-accent: #4f9d92;
+  /* muted teal (no orange) */
+  --brand-soft: #eef2f6;
+  /* cool soft bg */
+  --brand-line: #cbd5e1;
+  /* divider */
+}
+
+html,
+body {
+  background: linear-gradient(180deg, #fff 0%, #f6f8fb 100%);
+  color: var(--brand-ink);
+  font-size: 18px;
+
+}
+
+body {
+  font-family: "Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+p {
+  overflow-wrap: break-word;
+  font-size: 1.25rem;
+}
+
+.content-narrow {
+  max-width: 740px;
+}
+
+/* NAV */
+.nav-btn {
+  border: 1px solid var(--brand-line);
+  border-radius: 2rem;
+  padding: .5rem 1rem;
+  font-weight: 500;
+}
+
+.nav-btn:hover {
+  border-color: var(--brand-ink);
+}
+
+/* HERO */
+.hero {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headline {
+  font-weight: 300;
+  letter-spacing: .02em;
+  line-height: .86;
+  margin: 0;
+}
+
+.headline .row-gap {
+  display: block;
+}
+
+.headline {
+  font-size: clamp(2.4rem, 8.5vw, 8rem);
+}
+
+/* responsive like the ref */
+
+/* Inline image tile that sits inside big text */
+.text-img {
+  display: inline-block;
+  width: .9em;
+  height: .9em;
+  vertical-align: -.08em;
+  margin: .05em .06em;
+  background: url('https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
+  border-radius: .25rem;
+  box-shadow: 0 .4rem 2rem rgba(15, 23, 42, .15);
+}
+
+.headline {
+  line-height: 1;
+  font-size: 7rem;
+}
+
+.lead {
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.text-img {
+  vertical-align: -.18em
+}
+
+
+.kicker {
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  font-size: .85rem;
+  color: #475569
+}
+
+.sub {
+  font-size: clamp(1rem, 1.6vw, 1.4rem);
+  color: #334155
+}
+
+.stamp {
+  font-size: .75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  border: 1px solid var(--brand-line);
+  padding: .35rem .6rem;
+  border-radius: 999px;
+  background: #fff
+}
+
+/* Sections */
+.measure {
+  max-width: 56ch
+}
+
+.emoji-seq {
+  text-align: center;
+  font-size: clamp(2.2rem, 8.6vw, 6rem);
+  
+}
+
+.card-img-top {
+  height: 220px; /* Adjust as needed */
+  object-fit: cover;
+}
+
+@media (max-width: 992px) {
+  .rail {
+    position: static;
+    width: auto;
+    margin-top: 2rem
+  }
+}

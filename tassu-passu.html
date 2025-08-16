@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tassu Passu — human‑friendly password manager | Case study by Yevhenii Kalashnyk</title>
+  <meta name="description" content="Tassu Passu is a hackathon‑born concept that replaces passwords with memorable visual stories for preschoolers and families. Case study by Yevhenii Kalashnyk.">
+  <meta name="author" content="Yevhenii Kalashnyk">
+  <meta name="keywords" content="Tassu Passu, Junction, case study, password manager, storytelling, cybersecurity, Yevhenii Kalashnyk, marketing, consulting, Aalto University">
+  <!-- Open Graph tags -->
+  <meta property="og:title" content="Tassu Passu — human‑friendly password manager | Case study by Yevhenii Kalashnyk">
+  <meta property="og:description" content="Discover Tassu Passu, a prototype replacing passwords with visual stories. Case study by Yevhenii Kalashnyk.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://kalashnyk.com/tassu-passu.html">
+  <meta property="og:image" content="images/padlock-pastel.png">
+  <link rel="canonical" href="https://kalashnyk.com/tassu-passu.html">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-light bg-transparent py-3 position-fixed top-0 w-100" style="backdrop-filter:saturate(140%) blur(6px)">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="index.html">Yevhenii Kalashnyk</a>
+      <div class="d-flex align-items-center gap-2">
+        <a class="nav-btn text-decoration-none" href="projects.html">Selected works <i class="bi bi-arrow-up-right ms-1"></i></a>
+      </div>
+    </div>
+  </nav>
+  <!-- HERO -->
+  <header class="hero py-5 py-lg-6 mt-5 border-bottom">
+    <div class="container col-xxl-9 px-3 px-md-4 content-narrow">
+      <div class="row align-items-center g-4 g-lg-5 py-4">
+        <div class="col-lg">
+          <span class="badge badge-soft rounded-pill mb-3"><i class="bi bi-lightning-charge-fill me-1"></i> Case study</span>
+          <h1 class="display-5 fw-bold mb-3">Tassu Passu — a human‑friendly password manager</h1>
+          <p class="lead mb-4">A hackathon‑born concept that replaces passwords with visual stories so preschoolers and their families can log in safely. Built in 48 hours; recognized at Europe’s largest hackathon.</p>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="badge text-bg-dark rounded-pill"><i class="bi bi-trophy me-1"></i> Grand prize — Junction 2019 (€10k)</span>
+            <span class="badge rounded-pill text-dark" style="background:#fef3c7; border:1px solid #fde68a"><i class="bi bi-cash-coin me-1"></i> €1,500 prize — Startup Circus</span>
+            <a class="badge rounded-pill text-dark text-decoration-none" style="background:#f1f5f9; border:1px solid #e2e8f0" target="_blank" rel="noreferrer" href="https://medium.com/hack-junction/cybersecurity-behind-a-cute-design-tassu-passu-junction-2019-winner-3b8cd5c40f2a"><i class="bi bi-newspaper me-1"></i> Media feature</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- META GRID -->
+  <section class="py-4 bg-light border-bottom">
+    <div class="container col-xxl-9 px-3 px-md-4 content-narrow">
+      <div class="row g-4">
+        <div class="col-6">
+          <small class="text-secondary">Role</small>
+          <div class="fw-semibold">UX designer & co‑creator</div>
+        </div>
+        <div class="col-6">
+          <small class="text-secondary">Team</small>
+          <div class="fw-semibold">4 people: storytelling, growth, backend, UX</div>
+        </div>
+        <div class="col-6">
+          <small class="text-secondary">Timeline</small>
+          <div class="fw-semibold">48 hours prototype + pitch</div>
+        </div>
+        <div class="col-6">
+          <small class="text-secondary">Status</small>
+          <div class="fw-semibold">Prototype (project no longer active)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- INSPIRATION + HIGHLIGHTS -->
+  <section class="py-5">
+    <div class="container col-xxl-9 px-3 px-md-4 content-narrow"">
+      <h2 class="h3">Inspiration</h2>
+      <p class="mt-3">In 2018 I volunteered for a year at a kindergarten in Tallinn, teaching English and helping educators introduce robotics and programming. Many preschoolers were already using phones and tablets, yet couldn’t read or write. That experience sparked an idea: could we design security that a five‑year‑old can use — without text?</p>
+      <p>At Junction 2019, I joined a new team to build a prototype that turned passwords into memorable visual stories. The goal was radical simplicity: a login so intuitive a child or a grandparent could succeed on the first try.</p>
+      <img src="images/Tassu_Passu_Team.jpg" alt="Tassu Passu team at Junction 2019" class="img-fluid rounded-3 shadow-soft mb-3 mt-2">
+    </div>
+  </section>
+  <!-- PROBLEM / SOLUTION -->
+  <section class="py-5 bg-light">
+    <div class="container col-xxl-9 px-3 px-md-4 content-narrow">
+      <!-- Problem -->
+      <div class="mb-5">
+        <h2 class="h3">Problem</h2>
+        <p class="mt-3">Young children go online early but choose weak passwords or forget them. Parents often reuse simple passwords across accounts. Existing password managers are built for adults — not families with preschoolers.</p>
+        <!-- Consolidate problem statements into a single list for better focus -->
+        <div class="case-list mt-3">
+          <ul>
+            <li>Early device use among kids</li>
+            <li>Poor password hygiene</li>
+            <li>Parents also at risk</li>
+            <li>No kid‑first security UX</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Solution -->
+      <div>
+        <h2 class="h3">Solution</h2>
+        <!-- <img src="images/padlock-pastel.png" alt="Secure padlock" class="img-fluid rounded-3 shadow-soft mb-3"> -->
+        <p class="mt-3"><strong>Tassu Passu</strong> replaces text passwords with a short sequence of images — a story that’s easy to remember and hard to brute‑force.  Behind the scenes, the sequence maps to a secure hash and supports two‑factor authentication.</p>
+        <!-- Summarise key solution features in a single list -->
+        <div class="case-list mt-3">
+          <ul>
+            <li>Replace text passwords with memorable visual stories</li>
+            <li>Provide separate child and parent dashboards for family management</li>
+            <li>Secure passwords using blockchain encryption and two‑factor verification</li>
+          </ul>
+        </div>
+        <!-- Show an example of a story-to-hash conversion -->
+        <div class="p-4 bg-white border rounded-3 shadow-soft mt-3">
+          <div class="emoji-seq">🐮🥑🛸🏕🦸🏻‍♀️</div>
+          <div class="small text-secondary mt-2 text-center">A memorable story that becomes a strong cryptographic secret.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- EXPERIENCE DESIGN -->
+  <!-- <section class="py-5">
+    <div class="container col-xxl-9 px-3 px-md-4 content-narrow">
+      <h2 class="h3 mb-4">Experience design</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="p-4 bg-white border rounded-3 shadow-soft h-100">
+            <h3 class="h5">Child flow</h3>
+            <p class="small text-secondary">Tap to pick characters, places and objects to tell a tiny story. No text input, no keyboard, no reading required.</p>
+            <div class="placeholder-tile rounded-3 mt-3"></div>
+            <div class="form-text">Placeholder for screen mockup</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="p-4 bg-white border rounded-3 shadow-soft h-100">
+            <h3 class="h5">Parent dashboard</h3>
+            <p class="small text-secondary">Manage accounts, set app access, and add kids. Uses familiar patterns from password managers with added family controls.</p>
+            <div class="placeholder-tile rounded-3 mt-3" style="background:linear-gradient(135deg,#eef2ff,#e0f2fe);"></div>
+            <div class="form-text">Placeholder for dashboard mockup</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- PROCESS & CONTRIBUTION -->
+  <section class="py-5 bg-light">
+    <div class="container col-xxl-9 px-3 px-md-4 content-narrow" >
+      <h2 class="h3 mb-4">My process & contribution</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="p-4 bg-white border rounded-3 shadow-soft h-100">
+            <div class="d-flex align-items-center mb-2">
+              <i class="bi bi-search text-success fs-3 me-2"></i>
+              <h3 class="h5">Research & framing</h3>
+            </div>
+            <ul class="small mb-0 ps-3">
+              <li>Mapped preschool tech habits & pain points</li>
+              <li>Defined family‑centric value proposition</li>
+              <li>Benchmarked adult password managers</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="p-4 bg-white border rounded-3 shadow-soft h-100">
+            <div class="d-flex align-items-center mb-2">
+              <i class="bi bi-pen text-success fs-3 me-2"></i>
+              <h3 class="h5 mb-0">UX & storytelling</h3>
+            </div>
+            <ul class="small mb-0 ps-3">
+              <li>Designed literacy‑free login interaction</li>
+              <li>Created story logic for image sequences</li>
+              <li>Produced pitch narrative & demo script</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="p-4 bg-white border rounded-3 shadow-soft h-100">
+            <div class="d-flex align-items-center mb-2">
+              <i class="bi bi-rocket text-success fs-3 me-2"></i>
+              <h3 class="h5">Prototype</h3>
+            </div>
+            <ul class="small mb-0 ps-3">
+              <li>Built clickable flows for both views</li>
+              <li>Conducted user testing</li>
+              <li>Shipped in 48 hours for judging</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="p-4 bg-white border rounded-3 shadow-soft h-100">
+            <div class="d-flex align-items-center mb-2">
+              <i class="bi bi-award text-success fs-3 me-2"></i>
+              <h3 class="h5">Pitch & outcomes</h3>
+            </div>
+            
+            <ul class="small mb-0 ps-3">
+              <li>Won the Grand prize at Junction 2019 (Europe’s largest hackathon) — €10,000</li>
+              <li>Pitch at Startup Circus — €1,500 prize</li>
+              <li>Pitch at TechChill 2019</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM & PITCH -->
+  <section class="py-5">
+    <div class="container col-xxl-9 px-3 px-md-4 content-narrow">
+      <h2 class="h3 mb-4">Team &amp; pitch</h2>
+      <p class="mt-3">Tassu Passu came to life thanks to a small, diverse team. Each of us brought a complementary skill set to the table:</p>
+      <ul class="mb-3 ps-3">
+        <li><strong>Yevhenii Kalashnyk</strong> — UX design &amp; visuals</li>
+        <li><strong>Tulika Ganoo</strong> — research &amp; storytelling</li>
+        <li><strong>Reinis Scorovs</strong> — business strategy</li>
+        <li><strong>Ronalds Sovas</strong> — backend development</li>
+      </ul>
+      <!-- Embed the winning pitch video directly on the page.  Start at the time when our team begins presenting (6007 seconds). -->
+      <div class="ratio ratio-16x9 video-embed mt-3 rounded-3">
+        <iframe src="https://www.youtube.com/embed/J-ezI21KNi0?start=6007" title="Junction 2019 winning pitch video" allowfullscreen class="rounded-3"></iframe>
+      </div>
+      <p class="small mt-2">Our winning Junction 2019 presentation. I designed and produced all of the visuals for our pitch deck, while Reinis delivered the winning pitch.</p>
+
+    </div>
+  </section>
+  <!-- RESULTS / REFLECTION -->
+  <section class="py-5">
+    <div class="container col-xxl-9 px-3 px-md-4 content-narrow">
+
+          <h2 class="h3">What I learned</h2>
+          <p class="mt-3">Building security for very young users means eliminating friction, not understanding. Visual storytelling gave us a path to strong authentication without text.  The project sharpened my rapid‑prototyping, cross‑functional collaboration and “explain complex tech simply” skills.</p>
+
+  </section>
+  <!-- GALLERY -->
+  <section class="py-5 bg-light">
+    <div class="container col-xxl-9 px-3 px-md-4 content-narrow">
+      <h2 class="h3 mb-3">Gallery & artifacts</h2>
+      <p class="text-secondary small">The following images illustrate key moments and concepts from the project. Swap them for your own screenshots when ready.</p>
+      <div class="row g-4 mt-1">
+        <div class="col-12 col-sm-6 col-lg-4">
+          <a href="images/hero-pastel.png" class="text-decoration-none">
+            <img src="images/hero-pastel.png" class="img-fluid rounded-3 shadow-soft" alt="Pastel background">
+            <div class="form-text">Pastel background</div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <a href="images/tassu-icons.png" class="text-decoration-none">
+            <img src="images/tassu-icons.png" class="img-fluid rounded-3 shadow-soft" alt="Tassu icons">
+            <div class="form-text">Icon story illustration</div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <a href="images/padlock-pastel.png" class="text-decoration-none">
+            <img src="images/padlock-pastel.png" class="img-fluid rounded-3 shadow-soft" alt="Secure padlock">
+            <div class="form-text">Secure padlock</div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <a href="images/team-pastel.png" class="text-decoration-none">
+            <img src="images/team-pastel.png" class="img-fluid rounded-3 shadow-soft" alt="Team illustration">
+            <div class="form-text">Team collaboration</div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <a href="images/startup-circus-illustration.png" class="text-decoration-none">
+            <img src="images/startup-circus-illustration.png" class="img-fluid rounded-3 shadow-soft" alt="Startup Circus pitch">
+            <div class="form-text">Startup Circus pitch</div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <a href="images/slush-2019-illustration.png" class="text-decoration-none">
+            <img src="images/slush-2019-illustration.png" class="img-fluid rounded-3 shadow-soft" alt="Slush 2019 exhibition">
+            <div class="form-text">Slush 2019 exhibition</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Media & coverage -->
+  <section class="py-5">
+    <div class="container col-xxl-9 px-3 px-md-4 content-narrow">
+      <h2 class="h3 mb-4">Media &amp; coverage</h2>
+      <!-- Present each mention as its own card with an icon and short description.  This
+           layout feels more curated than a plain list of links. -->
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="p-3 bg-white border rounded-3 shadow-soft h-100 d-flex">
+            <div class="me-3"><i class="bi bi-newspaper fs-3 text-primary"></i></div>
+            <div>
+              <h3 class="h6 mb-1"><a href="https://www.hive.fi/en/article/student-project-tassu-passu/" target="_blank" rel="noreferrer" class="text-decoration-none">Hive Helsinki</a></h3>
+              <p class="small mb-0 text-secondary">Student project: Tassu&nbsp;Passu</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="p-3 bg-white border rounded-3 shadow-soft h-100 d-flex">
+            <div class="me-3"><i class="bi bi-globe fs-3 text-primary"></i></div>
+            <div>
+              <h3 class="h6 mb-1"><a href="https://www.mikkelinkaupunkilehti.fi/paikalliset/4012505" target="_blank" rel="noreferrer" class="text-decoration-none">Mikkelin Kaupunkilehti</a></h3>
+              <p class="small mb-0 text-secondary">Local Finnish feature on Tassu Passu</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="p-3 bg-white border rounded-3 shadow-soft h-100 d-flex">
+            <div class="me-3"><i class="bi bi-award fs-3 text-primary"></i></div>
+            <div>
+              <h3 class="h6 mb-1"><a href="https://www.osterbottenstidning.fi/Artikel/Visa/333807" target="_blank" rel="noreferrer" class="text-decoration-none">Österbottens Tidning</a></h3>
+              <p class="small mb-0 text-secondary">Reporting on our €10k win</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="p-3 bg-white border rounded-3 shadow-soft h-100 d-flex">
+            <div class="me-3"><i class="bi bi-journal-code fs-3 text-primary"></i></div>
+            <div>
+              <h3 class="h6 mb-1"><a href="https://medium.com/hack-junction/cybersecurity-behind-a-cute-design-tassu-passu-junction-2019-winner-3b8cd5c40f2a" target="_blank" rel="noreferrer" class="text-decoration-none">Hack Junction</a></h3>
+              <p class="small mb-0 text-secondary">Cybersecurity behind a cute design</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="p-3 bg-white border rounded-3 shadow-soft h-100 d-flex">
+            <div class="me-3"><i class="bi bi-camera-video fs-3 text-primary"></i></div>
+            <div>
+              <h3 class="h6 mb-1"><a href="https://www.youtube.com/live/J-ezI21KNi0?si=cMqRkQmjjzIwt8I1&t=6007" target="_blank" rel="noreferrer" class="text-decoration-none">Junction 2019 Pitch</a></h3>
+              <p class="small mb-0 text-secondary">Watch our winning presentation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- OTHER PROJECTS -->
+  <section class="py-5 bg-light">
+    <div class="container col-xxl-9 px-3 px-md-4 content-narrow">
+      <h2 class="h3 mb-4">Other projects</h2>
+      <div class="row g-4">
+        <!-- Uplift card -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card shadow-soft rounded-3xl h-100">
+            <img src="images/uplift-illustration.webp" class="card-img-top" alt="Uplift illustration">
+            <div class="card-body d-flex flex-column">
+              <h3 class="h6 card-title">Uplift</h3>
+              <p class="card-text small text-secondary flex-grow-1">Elevator‑themed video game sold to KONE for €18,600 plus €1,500 prize.</p>
+              <a href="uplift.html" class="stretched-link mt-auto" aria-label="Read more about Uplift"></a>
+            </div>
+          </div>
+        </div>
+        <!-- OmaOtos card -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card shadow-soft rounded-3xl h-100">
+            <img src="images/omaotos-illustration.png" class="card-img-top" alt="OmaOtos illustration">
+            <div class="card-body d-flex flex-column">
+              <h3 class="h6 card-title">OmaOtos</h3>
+              <p class="card-text small text-secondary flex-grow-1">Hearing health app delivering personalised results and sustained motivation.</p>
+              <a href="oma-otos.html" class="stretched-link mt-auto" aria-label="Read more about OmaOtos"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- CTA -->
+   <section class="py-5" id="contact">
+    <div class="container text-center">
+      <h2 class="h4 mb-3">Like this project? Get in touch</h2>
+      <p class="text-secondary mb-4">Email me, connect on LinkedIn, or check my GitHub.</p>
+      <div class="d-flex flex-wrap gap-2 justify-content-center">
+        <a class="btn btn-dark rounded-pill" href="mailto:hello@kalashnyk.com"><i class="bi bi-envelope me-1"></i>Email</a>
+        <a class="btn btn-outline-dark rounded-pill" target="_blank" rel="noreferrer" href="https://www.linkedin.com/"><i class="bi bi-linkedin me-1"></i>LinkedIn</a>
+        <a class="btn btn-outline-dark rounded-pill" target="_blank" rel="noreferrer" href="https://github.com/"><i class="bi bi-github me-1"></i>GitHub</a>
+      </div>
+    </div>
+  </section>
+    <footer class="border-top py-4 small">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div>© <span id="year"></span> Yevhenii Kalashnyk</div>
+      <div><a href="privacy.html" class="text-muted">Privacy Policy</a></div>
+    </div>
+  </footer>
+  <!-- Cookie Banner -->
+  <div id="cookie-banner" class="cookie-banner p-3 position-fixed bottom-0 start-50 translate-middle-x w-100 d-none">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <p class="mb-2 mb-md-0">This website uses cookies to enhance your experience and for analytics. By continuing to browse, you agree to our use of cookies.</p>
+      <button id="accept-cookies" class="btn btn-primary ms-md-3">Accept</button>
+    </div>
+  </div>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>
