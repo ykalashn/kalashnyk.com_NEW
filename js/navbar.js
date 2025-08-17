@@ -17,7 +17,7 @@
         <span></span>
       </span>
     </button>
-    <div class="collapse navbar-collapse" id="mainNavCollapse">
+    <div class="collapse navbar-collapse show" id="mainNavCollapse">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-4">
         <li class="nav-item">
           <a class="nav-link" href="about.html">About</a>
@@ -38,6 +38,17 @@
     if (oldNav) oldNav.remove();
 
     document.body.insertAdjacentHTML('afterbegin', navHTML);
+
+    // Ensure navbar-collapse is always open on large screens
+    function updateNavCollapse() {
+      var navCollapse = document.getElementById('mainNavCollapse');
+      if (window.innerWidth >= 992) {
+        navCollapse.classList.add('show');
+        document.body.classList.remove('menu-open');
+      }
+    }
+    updateNavCollapse();
+    window.addEventListener('resize', updateNavCollapse);
 
     // Animate hamburger icon to X when menu is open/closed
     document.addEventListener('click', function(e) {
