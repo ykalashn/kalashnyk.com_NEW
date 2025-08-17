@@ -12,20 +12,22 @@
   /* cool soft bg */
   --brand-line: #cbd5e1;
   /* divider */
-  --globalnav-background: rgba(255, 255, 255, 0.8);
+  --globalnav-background: #eef2f6;
 }
 
 html,
 body {
-  background: linear-gradient(180deg, #fff 0%, #f6f8fb 100%);
+  background: var(--brand-soft);
   color: var(--brand-ink);
   font-size: 18px;
+  margin: 0;
+  padding: 0;
 
 }
 
 body {
   font-family: "Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  /* padding-top: 90px; */
+
 }
 
 p {
@@ -104,7 +106,7 @@ p {
   color: #334155
 }
 
-.stamp {
+/* .stamp {
   font-size: .75rem;
   display: inline-flex;
   align-items: center;
@@ -113,7 +115,7 @@ p {
   padding: .35rem .6rem;
   border-radius: 999px;
   background: #fff
-}
+} */
 
 /* Sections */
 .measure {
@@ -143,7 +145,7 @@ p {
 .cookie-banner-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.55); /* dark, semi-transparent */
+  background: rgba(15, 23, 42, 0.65); /* dark, semi-transparent */
   z-index: 1999;
   pointer-events: auto;
   transition: opacity 0.5s;
@@ -179,10 +181,9 @@ body.cookie-banner-active {
 }
 /* smooth slide */
 #mainNav { 
-  /* background: var(--globalnav-background); */
-  backdrop-filter: saturate(140%) blur(12px);
-  -webkit-backdrop-filter: saturate(140%) blur(12px);
-  transition: transform 0.5s ease; 
+  background: var(--globalnav-background);
+
+  transition: transform 0.4s ease; 
    z-index: 1200;
    top: 0;
 }
@@ -207,7 +208,7 @@ body.cookie-banner-active {
 
 .fade-in {
   opacity: 0;
-  transition: opacity 1s;
+  transition: opacity 0.5s;
 }
 img:not([data-src]):not(.fade-in) {
   opacity: 1;
@@ -228,7 +229,6 @@ img.fade-in {
   font-size: 2rem;
 }
 
-/* Optional: custom collapse background */
 .navbar-collapse {
   /* background: var(--globalnav-background); */
   backdrop-filter: saturate(140%) blur(12px);
@@ -289,7 +289,7 @@ img.fade-in {
   display: block;
   height: 2.5px;
   width: 100%;
-  background: #222;
+  background: var(--brand-ink);
   border-radius: 2px;
   transition: transform 0.3s cubic-bezier(.4,2,.3,1);
 }
@@ -331,6 +331,10 @@ img.fade-in {
     padding: 1rem 0;
     color: var(--brand-ink) !important;
     text-align: center;
+  }
+  .navbar-collapse {
+    margin-top: 0 !important;
+    transition: opacity 0.35s cubic-bezier(.4,2,.3,1), transform 0.35s cubic-bezier(.4,2,.3,1), margin-top 0.2s;
   }
 }
 

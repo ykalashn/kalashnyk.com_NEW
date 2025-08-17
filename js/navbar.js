@@ -8,7 +8,7 @@
     const projectsHref = isIndex ? '#projects' : '/#projects';
 
     const navHTML = `
-<nav id="mainNav" class="navbar navbar-expand-lg navbar-light bg-white py-3 position-fixed top-0 w-100">
+<nav id="mainNav" class="navbar navbar-expand-lg py-3 position-fixed top-0 w-100">
   <div class="container">
     <a class="navbar-brand fw-semibold" href="/">Yevhenii Kalashnyk</a>
     <button class="navbar-toggler custom-hamburger" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavCollapse" aria-controls="mainNavCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,7 +17,7 @@
         <span></span>
       </span>
     </button>
-    <div class="collapse navbar-collapse show" id="mainNavCollapse">
+    <div class="collapse navbar-collapse" id="mainNavCollapse">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-4">
         <li class="nav-item">
           <a class="nav-link" href="about.html">About</a>
@@ -96,6 +96,37 @@
         bsCollapse.hide();
         document.body.classList.remove('menu-open'); // Restore scroll
       }
+    });
+
+    // Automatically close mobile menu only after navbar has scrolled out of view
+    let lastScrollY = window.scrollY;
+    let navHidden = false;
+    const nav = document.getElementById('mainNav');
+
+    window.addEventListener('scroll', function() {
+      var navCollapse = document.getElementById('mainNavCollapse');
+      if (!nav) return;
+
+      // Check if navbar is out of view (scrolled up)
+      const navRect = nav.getBoundingClientRect();
+      if (navRect.bottom <= 0) {
+        navHidden = true;
+      } else {
+        navHidden = false;
+      }
+
+      // Only close menu if navbar is hidden and menu is open
+      if (
+        navCollapse &&
+        navCollapse.classList.contains('show') &&
+        window.innerWidth < 992 &&
+        navHidden
+      ) {
+        var bsCollapse = bootstrap.Collapse.getOrCreateInstance(navCollapse);
+        bsCollapse.hide();
+        document.body.classList.remove('menu-open');
+      }
+      lastScrollY = window.scrollY;
     });
   }
 
