@@ -26,7 +26,7 @@
           <a class="nav-link" href="${projectsHref}">Projects</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="cv.pdf" target="_blank">CV</a>
+          <a class="nav-link" href="#contact">Contact</a>
         </li>
       </ul>
     </div>
