@@ -19,18 +19,19 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <script src="js/navbar.js"></script>
   <!-- Navigation -->
-  <nav class="navbar navbar-light bg-transparent py-3 position-fixed top-0 w-100" style="backdrop-filter:saturate(140%) blur(6px); z-index: 1050;">
-    <div class="container">
-      <a class="navbar-brand fw-semibold" href="index.html">Yevhenii Kalashnyk</a>
-      <div class="d-flex align-items-center gap-4">
-        <a class="text-decoration-none active" href="about.html">About</a>
-        <a class="text-decoration-none" href="index.html#projects">Projects</a>
-      </div>
+<nav id="mainNav" class="navbar navbar-light py-3 position-fixed top-0 w-100">
+  <div class="container">
+    <a class="navbar-brand fw-semibold" href="index.html">Yevhenii Kalashnyk</a>
+    <div class="d-flex align-items-center gap-4">
+      <a class="text-decoration-none" href="about.html">About</a>
+      <a class="text-decoration-none" href="index.html#projects">Projects</a>
     </div>
-  </nav>
+  </div>
+</nav>
   <!-- Hero -->
-  <header class="hero py-5 py-lg-6 mt-5 border-bottom text-center">
+  <header class="hero py-5 py-lg-6 border-bottom text-center">
     <div class="container col-xxl-9 px-3 px-md-4 g-4 g-lg-5 py-4 content-narrow">
       <h1 class="display-4 fw-bold mb-3">About me</h1>
     </div>
@@ -41,9 +42,9 @@
       <div class="row">
         <div class="col">
         <h2 class="h3 mb-3">My journey</h2>
-        <p>Born and raised in rural Ukraine, I grew up surrounded by cherry trees and community.  Today, I'm based in Helsinki, pursuing a master's degree in marketing at Aalto University.  My path from a small village to one of Europe's leading innovation hubs has been filled with diverse experiences — from volunteering in kindergartens and organising events to designing user interfaces and pitching at international competitions.</p>
+        <p>Born and raised in rural Ukraine, I grew up surrounded by cherry trees and tight-knit community.  Today, I'm based in Helsinki, pursuing a master's degree in marketing at Aalto University.  My path from a small village to one of Europe's leading innovation hubs has been filled with diverse experiences — from volunteering in kindergartens and organising events to designing user interfaces and pitching at international competitions.</p>
         <p>Along the way I've learned to bridge cultures and disciplines.  I taught English and robotics to preschoolers in Estonia, built human-friendly cybersecurity tools, gamified elevator rides for KONE, and helped improve hearing health through storytelling.  These experiences taught me empathy, adaptability and the power of simple narratives.</p>
-        <p class="mb-4">As a vegan and member of the LGBTQ+ community, I care deeply about inclusion and sustainability.  I'm currently applying for Finnish citizenship and sharpening my Finnish — slowly but surely.  When I'm not studying, you'll find me exploring Helsinki's coffee shops, hosting community events or events like Slush or Junction. I'm also learning to play piano!</p>
+        <p class="mb-4">As a vegan and member of the LGBTQ+ community, I care deeply about inclusion and sustainability.  I'm currently applying for Finnish citizenship and sharpening my Finnish — slowly but surely.  When I'm not studying, you'll find me exploring Helsinki's coffee shops, hosting community events or events like Slush or Junction. I'm also learning to play the piano!</p>
         <br><h2 class="h3 mb-3">Values &amp; interests</h2>
         <ul>
           <li><strong>Empathy &amp; accessibility:</strong> I strive to create products that everyone can use, regardless of age, ability or background.</li>
@@ -75,10 +76,18 @@
     </div>
   </footer>
   <!-- Cookie banner reused across pages -->
-  <div id="cookie-banner" class="cookie-banner p-3 position-fixed bottom-0 start-50 translate-middle-x w-100 d-none">
-    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
-      <p class="mb-2 mb-md-0">This website uses cookies to enhance your experience and for analytics. By continuing to browse, you agree to our use of cookies.</p>
-      <button id="accept-cookies" class="btn btn-primary ms-md-3">Accept</button>
+<div id="cookie-banner-overlay" class="cookie-banner-overlay" style="display: none;"></div>
+<div id="cookie-banner" class="cookie-banner p-3 position-fixed w-100 w-lg-auto d-none">
+    <div class="d-flex flex-column align-items-center align-items-lg-start justify-content-center gap-3"
+      style="max-width: 600px; margin: 0 auto; background: #fff; border-radius: 1.5rem; box-shadow: 0 2px 32px rgba(0,0,0,0.12); padding: 2rem;">
+      <p class="mb-2 text-center text-lg-start flex-grow-1 small">
+        This website uses cookies to enhance your experience and for analytics. By continuing to browse, you agree to our use of cookies. Read our 
+        <a href="privacy.html" class="ms-1 text-decoration-underline">Privacy Policy</a>
+      </p>
+      <div class="d-flex flex-row flex-lg-column gap-2 w-100 justify-content-center justify-content-lg-start">
+        <button id="decline-cookies" class="btn btn-outline-primary w-100 w-lg-auto">Decline</button>
+        <button id="accept-cookies" class="btn btn-primary w-100 w-lg-auto">Accept</button>
+      </div>
     </div>
   </div>
   <!-- Bootstrap JS -->

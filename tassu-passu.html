@@ -22,16 +22,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-light bg-transparent py-3 position-fixed top-0 w-100" style="backdrop-filter:saturate(140%) blur(6px); z-index: 1050;">
-    <div class="container">
-      <a class="navbar-brand fw-semibold" href="index.html">Yevhenii Kalashnyk</a>
-      <div class="d-flex align-items-center gap-4">
-        <a class="text-decoration-none" href="about.html">About</a>
-        <a class="text-decoration-none active" href="index.html#projects">Projects</a>
-      </div>
-    </div>
-  </nav>
+  <script src="js/navbar.js"></script>
   <!-- HERO -->
   <header class="hero py-5 py-lg-6 mt-5 border-bottom">
     <div class="container col-xxl-9 px-3 px-md-4 content-narrow">
@@ -382,10 +373,18 @@
     </div>
   </footer>
   <!-- Cookie Banner -->
-  <div id="cookie-banner" class="cookie-banner p-3 position-fixed bottom-0 start-50 translate-middle-x w-100 d-none">
-    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
-      <p class="mb-2 mb-md-0">This website uses cookies to enhance your experience and for analytics. By continuing to browse, you agree to our use of cookies.</p>
-      <button id="accept-cookies" class="btn btn-primary ms-md-3">Accept</button>
+<div id="cookie-banner-overlay" class="cookie-banner-overlay" style="display: none;"></div>
+<div id="cookie-banner" class="cookie-banner p-3 position-fixed w-100 w-lg-auto d-none">
+    <div class="d-flex flex-column align-items-center align-items-lg-start justify-content-center gap-3"
+      style="max-width: 600px; margin: 0 auto; background: #fff; border-radius: 1.5rem; box-shadow: 0 2px 32px rgba(0,0,0,0.12); padding: 2rem;">
+      <p class="mb-2 text-center text-lg-start flex-grow-1 small">
+        This website uses cookies to enhance your experience and for analytics. By continuing to browse, you agree to our use of cookies. Read our 
+        <a href="privacy.html" class="ms-1 text-decoration-underline">Privacy Policy</a>
+      </p>
+      <div class="d-flex flex-row flex-lg-column gap-2 w-100 justify-content-center justify-content-lg-start">
+        <button id="decline-cookies" class="btn btn-outline-primary w-100 w-lg-auto">Decline</button>
+        <button id="accept-cookies" class="btn btn-primary w-100 w-lg-auto">Accept</button>
+      </div>
     </div>
   </div>
   <!-- Bootstrap JS -->

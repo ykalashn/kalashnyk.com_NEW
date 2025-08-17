@@ -1,29 +1,39 @@
-
-
 document.addEventListener('DOMContentLoaded', function () {
-  // Insert current year into any footer span with id beginning with 'year'
-  var year = new Date().getFullYear();
-  ['year', 'year-case', 'year-privacy'].forEach(function (id) {
-    var el = document.getElementById(id);
-    if (el) {
-      el.textContent = year;
-    }
+  // Insert current year into footer spans
+  const year = new Date().getFullYear();
+  ['year', 'year-case', 'year-privacy'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = year;
   });
 
-  // Cookie consent banner logic
-  var banner = document.getElementById('cookie-banner');
-  var acceptBtn = document.getElementById('accept-cookies');
+  // Cookie consent logic
+  const banner = document.getElementById('cookie-banner');
+  const overlay = document.getElementById('cookie-banner-overlay');
+  const acceptBtn = document.getElementById('accept-cookies');
+  const declineBtn = document.getElementById('decline-cookies');
+
+  function showBanner() {
+    if (banner && overlay) {
+      banner.classList.remove('d-none');
+      banner.style.display = 'block';
+      overlay.style.display = 'block';
+      document.body.classList.add('cookie-banner-active');
+    }
+  }
 
   function hideBanner() {
-    if (banner) {
+    if (banner && overlay) {
       banner.classList.add('d-none');
+      banner.style.display = 'none';
+      overlay.style.display = 'none';
+      document.body.classList.remove('cookie-banner-active');
     }
   }
 
   function loadAnalytics() {
     if (window.gtag) return;
-    var scriptTag = document.createElement('script');
-    scriptTag.setAttribute('async', '');
+    const scriptTag = document.createElement('script');
+    scriptTag.async = true;
     scriptTag.src = 'https://www.googletagmanager.com/gtag/js?id=G-4KTXJGHKBG';
     document.head.appendChild(scriptTag);
     window.dataLayer = window.dataLayer || [];
@@ -33,36 +43,66 @@ document.addEventListener('DOMContentLoaded', function () {
     gtag('config', 'G-4KTXJGHKBG');
   }
 
-  // Show banner if consent not given
-  if (banner && document.cookie.indexOf('cookie_consent=true') === -1) {
-    banner.classList.remove('d-none');
-  }
-
-  // Accept button handler
-  if (acceptBtn) {
-    acceptBtn.addEventListener('click', function () {
-      var expiryDate = new Date();
-      expiryDate.setFullYear(expiryDate.getFullYear() + 1);
-      document.cookie = 'cookie_consent=true; expires=' + expiryDate.toUTCString() + '; path=/';
-      hideBanner();
-      loadAnalytics();
-    });
-  }
-
-  // Load analytics automatically if consent stored
-  if (document.cookie.indexOf('cookie_consent=true') !== -1) {
+  // Consent check
+  const consent = localStorage.getItem('cookiesConsent');
+  if (consent !== 'accepted') {
+    showBanner();
+  } else {
     loadAnalytics();
   }
 
-  // Lazy loading for images
-  var lazyImages = document.querySelectorAll('img[data-src]');
+  if (acceptBtn) {
+    acceptBtn.onclick = function () {
+      localStorage.setItem('cookiesConsent', 'accepted');
+      hideBanner();
+      loadAnalytics();
+    };
+  }
+  if (declineBtn) {
+    declineBtn.onclick = function () {
+      localStorage.setItem('cookiesConsent', 'declined');
+      hideBanner();
+      // No analytics
+    };
+  }
+
+  // Hide nav on scroll down, show on scroll up
+  (function () {
+    const nav = document.getElementById("mainNav");
+    if (!nav) return;
+    let lastScrollTop = 0;
+    const THRESHOLD = 8;
+    const TOP_LOCK = 60;
+    window.addEventListener("scroll", () => {
+      let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      if (currentScroll < TOP_LOCK) {
+        nav.style.transform = "translateY(0)";
+        lastScrollTop = currentScroll;
+        return;
+      }
+      if (currentScroll > lastScrollTop + THRESHOLD) {
+        nav.style.transform = "translateY(-100%)";
+      } else if (currentScroll < lastScrollTop - THRESHOLD) {
+        nav.style.transform = "translateY(0)";
+      }
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    }, { passive: true });
+  })();
+
+  // Lazy loading with animation for images
+  const lazyImages = document.querySelectorAll('img[data-src]');
+  function animateImage(img) {
+    img.classList.add('fade-in');
+    setTimeout(() => img.classList.remove('fade-in'), 1000);
+  }
   if ('IntersectionObserver' in window) {
-    var observer = new IntersectionObserver(function (entries, obs) {
-      entries.forEach(function (entry) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
-          var img = entry.target;
+          const img = entry.target;
           img.src = img.getAttribute('data-src');
           img.removeAttribute('data-src');
+          animateImage(img);
           obs.unobserve(img);
         }
       });
@@ -70,13 +110,53 @@ document.addEventListener('DOMContentLoaded', function () {
       rootMargin: '0px 0px 50px 0px',
       threshold: 0.01
     });
-    lazyImages.forEach(function (img) {
-      observer.observe(img);
-    });
+    lazyImages.forEach(img => observer.observe(img));
   } else {
-    lazyImages.forEach(function (img) {
+    lazyImages.forEach(img => {
       img.src = img.getAttribute('data-src');
       img.removeAttribute('data-src');
+      animateImage(img);
     });
   }
+
+  // Hamburger menu logic
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const body = document.body;
+
+  function openMenu() {
+    hamburger.classList.add('open');
+    mobileMenu.classList.add('open');
+    body.classList.add('menu-open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    // Focus logo for accessibility
+    const logo = mobileMenu.querySelector('.navbar-brand');
+    if (logo) logo.focus();
+  }
+  function closeMenu() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    body.classList.remove('menu-open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+
+  // Fix for hamburger menu JS error: only add event listener if hamburger exists
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+      if (mobileMenu.classList.contains('open')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+  }
+
+  // Close menu when clicking outside or on a link
+  mobileMenu.addEventListener('click', (e) => {
+    if (e.target === mobileMenu) closeMenu();
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
 });
+
