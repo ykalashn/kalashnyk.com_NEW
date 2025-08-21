@@ -13,6 +13,8 @@
   --brand-line: #cbd5e1;
   /* divider */
   --globalnav-background: #eef2f6;
+  --global-radius: 2rem;
+  --brand-white: #ffffff;
 }
 
 html,
@@ -77,16 +79,6 @@ p {
 }
 
 /* Inline image tile that sits inside big text */
-.text-img {
-  display: inline-block;
-  width: .9em;
-  height: .9em;
-  vertical-align: -.08em;
-  margin: .05em .06em;
-  background: url("images/yevhenii_presents.png") center/cover no-repeat;
-  border-radius: .25rem;
-  box-shadow: 0 .4rem 2rem rgba(15, 23, 42, .15);
-}
 
 .lead {
   font-weight: 500;
@@ -110,16 +102,6 @@ p {
   color: #334155
 }
 
-/* .stamp {
-  font-size: .75rem;
-  display: inline-flex;
-  align-items: center;
-  gap: .4rem;
-  border: 1px solid var(--brand-line);
-  padding: .35rem .6rem;
-  border-radius: 999px;
-  background: #fff
-} */
 
 /* Sections */
 .measure {
@@ -129,26 +111,38 @@ p {
 .emoji-seq {
   text-align: center;
   font-size: clamp(2.2rem, 8.6vw, 6rem);
-  
+
 }
 
 .card {
   border-radius: 2rem;
   overflow: hidden;
 }
+
 .card-img-top {
-  height: 230px; /* Adjust as needed */
+  height: 250px;
   object-fit: cover;
   border-radius: 2rem;
   padding: 0.5rem;
 }
 
 img {
-  border-radius: 2rem!important;
+  border-radius: var(--global-radius) !important;
 }
 
 .about-img {
-  max-height: 100svh!important;
+  max-height: 100svh !important;
+}
+
+.project-section {
+  background-color: var(--brand-white);
+  padding: 1rem;
+  margin-top: 2rem;
+  border-radius: var(--global-radius);
+}
+
+.project-section:last-child {
+  margin-bottom: 1rem;
 }
 
 #cookie-banner {
@@ -162,7 +156,7 @@ img {
 .cookie-banner-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.65); /* dark, semi-transparent */
+  background: rgba(15, 23, 42, 0.65);
   z-index: 1999;
   pointer-events: auto;
   transition: opacity 0.5s;
@@ -173,6 +167,7 @@ body.cookie-banner-active {
   overflow: hidden;
 }
 
+
 @media (min-width: 992px) {
   #cookie-banner {
     top: 50%;
@@ -180,36 +175,44 @@ body.cookie-banner-active {
     transform: translate(-50%, -50%);
     width: auto;
   }
-  #cookie-banner .cookie-banner > div {
+
+  #cookie-banner .cookie-banner>div {
     max-width: 600px;
     padding: 2rem;
   }
+
   #cookie-banner p {
     text-align: left !important;
   }
+
   #cookie-banner .d-flex.flex-row.flex-lg-column {
     flex-direction: column !important;
     align-items: flex-start !important;
     width: 100%;
   }
+
   #cookie-banner button {
     width: 100%;
   }
 }
-/* smooth slide */
-#mainNav { 
-  background: var(--globalnav-background);
 
-  transition: transform 0.4s ease; 
-   z-index: 1200;
-   top: 0;
+/* smooth slide */
+#mainNav {
+  background: var(--globalnav-background);
+  transition: transform 0.4s ease;
+  border-radius: 0 0 1.5rem 1.5rem;
+  z-index: 1200;
+  top: 0;
 }
 
 /* height of the nav when hidden; adjust if your nav is taller/shorter */
-#mainNav.nav-hidden { top: -88px; }
+#mainNav.nav-hidden {
+  top: -88px;
+}
 
-/* make sure content never hides under the fixed nav (optional if you already pad the hero) */
-
+#contact .container {
+  margin-bottom: 1rem;
+}
 
 @media (max-width: 992px) {
   .rail {
@@ -217,19 +220,22 @@ body.cookie-banner-active {
     width: auto;
     margin-top: 2rem
   }
+
   .kicker {
-  letter-spacing: 0.1rem;
-  font-size: .8rem;
+    letter-spacing: 0.1rem;
+    font-size: .8rem;
   }
 }
 
 .fade-in {
   opacity: 0;
-  transition: opacity 0.5s;
+  transition: opacity 1s;
 }
+
 img:not([data-src]):not(.fade-in) {
   opacity: 1;
 }
+
 img.fade-in {
   opacity: 1;
 }
@@ -247,23 +253,17 @@ img.fade-in {
 }
 
 .navbar-collapse {
-  /* background: var(--globalnav-background); */
-  backdrop-filter: saturate(140%) blur(12px);
-  -webkit-backdrop-filter: saturate(140%) blur(12px);
-  box-shadow: 0 2px 32px rgba(0,0,0,0.12);
   border-radius: 1.5rem;
-  margin-top: 1rem;
-  transition: opacity 0.35s cubic-bezier(.4,2,.3,1), transform 0.35s cubic-bezier(.4,2,.3,1);
   transform: translateY(0);
+  transition: opacity 0.35s cubic-bezier(.4, 2, .3, 1), transform 0.35s cubic-bezier(.4, 2, .3, 1);
   opacity: 1;
-
 }
 
 /* Smooth collapse animation for mobile menu */
 .collapse:not(.show) {
   opacity: 0;
   transform: translateY(-20px);
-  transition: opacity 0.35s cubic-bezier(.4,2,.3,1), transform 0.35s cubic-bezier(.4,2,.3,1);
+  transition: opacity 0.35s cubic-bezier(.4, 2, .3, 1), transform 0.35s cubic-bezier(.4, 2, .3, 1);
 }
 
 /* Remove rounded background from navbar-collapse on large screens */
@@ -272,6 +272,7 @@ img.fade-in {
     text-align: center;
     margin-bottom: 2rem;
   }
+
   .navbar-collapse {
     background: none;
     box-shadow: none;
@@ -279,6 +280,7 @@ img.fade-in {
     margin-top: 0;
   }
 }
+
 /* Restore Bootstrap hamburger icon visibility */
 .navbar-toggler .navbar-toggler-icon {
   display: inline-block;
@@ -311,13 +313,14 @@ img.fade-in {
   width: 100%;
   background: var(--brand-ink);
   border-radius: 2px;
-  transition: transform 0.3s cubic-bezier(.4,2,.3,1);
+  transition: transform 0.3s cubic-bezier(.4, 2, .3, 1);
 }
 
 /* Animate to X when menu is open */
 .custom-hamburger[aria-expanded="true"] .custom-hamburger-icon span:first-child {
   transform: rotate(45deg) translate(3px, 3px);
 }
+
 .custom-hamburger[aria-expanded="true"] .custom-hamburger-icon span:last-child {
   transform: rotate(-45deg) translate(3px, -3px);
 }
@@ -335,42 +338,60 @@ img.fade-in {
   outline: none !important;
 }
 
+
 /* Make menu text larger and more readable on mobile */
 @media (max-width: 991.98px) {
+  /* Overlay for mobile menu */
+
+  body.menu-open .main-content,
+  body.menu-open #mainNav~*:not(#mainNav) {
+    filter: blur(50px);
+    transition: filter 1.3s;
+    overflow: hidden;
+  }
+
+  /* Prevent scrolling when mobile menu is open */
+  body.menu-open {
+    overflow: hidden;
+  }
+
   .navbar-collapse {
-    text-align: center;
     padding-left: 0;
     padding-right: 0;
   }
+
   .navbar-nav {
-    align-items: center;
+    margin-top: 2rem;
   }
+
   .navbar-nav .nav-link {
-    font-size: 1.25rem;
-    font-weight: 500;
-    padding: 1rem 0;
+    font-size: 2.4rem;
+    font-weight: 600;
     color: var(--brand-ink) !important;
-    text-align: center;
+    text-align: left;
   }
+
   .navbar-collapse {
     margin-top: 0 !important;
-    transition: opacity 0.35s cubic-bezier(.4,2,.3,1), transform 0.35s cubic-bezier(.4,2,.3,1), margin-top 0.2s;
+    transition: opacity 0.35s cubic-bezier(.4, 2, .3, 1), transform 0.35s cubic-bezier(.4, 2, .3, 1), margin-top 0.2s;
   }
+
   .img-hero {
-  min-height: 250px;
-  object-fit: cover;
-  object-position: 35%;
-}
+    min-height: 250px;
+    object-fit: cover;
+    object-position: 35%;
+  }
 
 }
 
 @media (min-width: 576px) {
-.img-hero {
-  min-height: 300px;
-  object-fit: cover;
-  object-position: 35%;
+  .img-hero {
+    min-height: 300px;
+    object-fit: cover;
+    object-position: 35%;
+  }
 }
-}
+
 /* Add left padding for menu items on desktop */
 @media (min-width: 992px) {
   .navbar-nav .nav-link {
@@ -378,5 +399,5 @@ img.fade-in {
     padding-right: 1rem;
     color: var(--brand-ink) !important;
   }
-  
+
 }

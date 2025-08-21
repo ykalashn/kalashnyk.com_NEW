@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
     scriptTag.src = 'https://www.googletagmanager.com/gtag/js?id=G-4KTXJGHKBG';
     document.head.appendChild(scriptTag);
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+    function gtag() { window.dataLayer.push(arguments); }
     window.gtag = gtag;
     gtag('js', new Date());
     gtag('config', 'G-4KTXJGHKBG');
@@ -69,6 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Hide nav on scroll down, show on scroll up
   (function () {
     const nav = document.getElementById("mainNav");
+    const navCollapse = document.getElementById('mainNavCollapse');
     if (!nav) return;
     let lastScrollTop = 0;
     const THRESHOLD = 8;
@@ -82,6 +83,15 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       if (currentScroll > lastScrollTop + THRESHOLD) {
         nav.style.transform = "translateY(-100%)";
+        // Close menu if open
+        if (
+          navCollapse &&
+          navCollapse.classList.contains('show') &&
+          window.innerWidth < 992
+        ) {
+          var bsCollapse = bootstrap.Collapse.getOrCreateInstance(navCollapse);
+          bsCollapse.hide();
+        }
       } else if (currentScroll < lastScrollTop - THRESHOLD) {
         nav.style.transform = "translateY(0)";
       }
@@ -119,44 +129,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Hamburger menu logic
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const body = document.body;
-
-  function openMenu() {
-    hamburger.classList.add('open');
-    mobileMenu.classList.add('open');
-    body.classList.add('menu-open');
-    hamburger.setAttribute('aria-expanded', 'true');
-    // Focus logo for accessibility
-    const logo = mobileMenu.querySelector('.navbar-brand');
-    if (logo) logo.focus();
-  }
-  function closeMenu() {
-    hamburger.classList.remove('open');
-    mobileMenu.classList.remove('open');
-    body.classList.remove('menu-open');
-    hamburger.setAttribute('aria-expanded', 'false');
-  }
-
-  // Fix for hamburger menu JS error: only add event listener if hamburger exists
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => {
-      if (mobileMenu.classList.contains('open')) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
+  // Use Bootstrap collapse events to toggle menu-open class on body
+  const navCollapse = document.getElementById('mainNavCollapse');
+  if (navCollapse) {
+    navCollapse.addEventListener('show.bs.collapse', function () {
+      document.body.classList.add('menu-open');
+    });
+    navCollapse.addEventListener('hide.bs.collapse', function () {
+      document.body.classList.remove('menu-open');
     });
   }
-
-  // Close menu when clicking outside or on a link
-  mobileMenu.addEventListener('click', (e) => {
-    if (e.target === mobileMenu) closeMenu();
-  });
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
 });
 

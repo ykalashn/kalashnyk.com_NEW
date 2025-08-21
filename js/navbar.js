@@ -39,12 +39,17 @@
 
     document.body.insertAdjacentHTML('afterbegin', navHTML);
 
-    // Ensure navbar-collapse is always open on large screens
+    // Ensure navbar-collapse is always open on large screens or landscape on small screens
     function updateNavCollapse() {
       var navCollapse = document.getElementById('mainNavCollapse');
-      if (window.innerWidth >= 992) {
+      if (
+        window.innerWidth >= 992 ||
+        (window.innerWidth < 992 && window.matchMedia('(orientation: landscape)').matches)
+      ) {
         navCollapse.classList.add('show');
         document.body.classList.remove('menu-open');
+      } else {
+        navCollapse.classList.remove('show');
       }
     }
     updateNavCollapse();
