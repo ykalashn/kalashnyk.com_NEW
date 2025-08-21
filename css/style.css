@@ -21,7 +21,7 @@ html,
 body {
   background: var(--brand-soft);
   color: var(--brand-ink);
-  font-size: 18px;
+  font-size: 16px;
   margin: 0;
   padding: 0;
 
@@ -102,6 +102,15 @@ p {
   color: #334155
 }
 
+/* one place to control all chips */
+.badge.chip {
+  border: 1px solid var(--brand-line);
+  border-radius: var(--global-radius);
+  white-space: nowrap;
+  color: var(--brand-ink);
+}
+
+/* labels */
 
 /* Sections */
 .measure {
@@ -122,7 +131,7 @@ p {
 .card-img-top {
   height: 250px;
   object-fit: cover;
-  border-radius: 2rem;
+  border-radius: var(--global-radius);
   padding: 0.5rem;
 }
 
@@ -134,15 +143,29 @@ img {
   max-height: 100svh !important;
 }
 
+.brand-border {
+  
+  border-radius: calc(var(--global-radius)/2);
+}
+
 .project-section {
-  background-color: var(--brand-white);
-  padding: 1rem;
+
+  margin: 16px;
   margin-top: 2rem;
-  border-radius: var(--global-radius);
+  border-radius: calc(var(--global-radius)/2);
 }
 
 .project-section:last-child {
   margin-bottom: 1rem;
+}
+
+.project-section .container {
+  background-color: var(--brand-white);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  
+ 
+  border-radius: calc(var(--global-radius)/2);
 }
 
 #cookie-banner {
