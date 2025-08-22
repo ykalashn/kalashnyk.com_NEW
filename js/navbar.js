@@ -76,7 +76,7 @@
         document.body.classList.remove('menu-open');
       });
     }
-    // Smoothly close navbar on mobile when clicking a nav-link
+
     // Smoothly close navbar on mobile when clicking a nav-link
     document.addEventListener('DOMContentLoaded', function() {
       var navCollapse = document.getElementById('mainNavCollapse');
@@ -88,29 +88,31 @@
             var bsCollapse = bootstrap.Collapse.getOrCreateInstance(navCollapse);
             setTimeout(function() {
               bsCollapse.hide();
-            }, 80); // slight delay for smoothness
+              document.body.classList.remove('menu-open'); // Ensure scroll is restored
+            }, 80);
           }
         });
       });
-    // Close menu when clicking outside the navbar on mobile
-    const mainNav = document.getElementById('mainNav');
-    if (mainNav) {
-      mainNav.addEventListener('click', function(e) {
-        var navCollapse = document.getElementById('mainNavCollapse');
-        var toggler = document.querySelector('.navbar-toggler');
-        if (
-          navCollapse &&
-          navCollapse.classList.contains('show') &&
-          !navCollapse.contains(e.target) &&
-          !toggler.contains(e.target) &&
-          window.innerWidth < 992
-        ) {
-          var bsCollapse = bootstrap.Collapse.getOrCreateInstance(navCollapse);
-          bsCollapse.hide();
-          document.body.classList.remove('menu-open'); // Restore scroll
-        }
-      });
-    }
+
+      // Close menu when clicking outside the navbar on mobile
+      const mainNav = document.getElementById('mainNav');
+      if (mainNav) {
+        document.addEventListener('click', function(e) {
+          var navCollapse = document.getElementById('mainNavCollapse');
+          var toggler = document.querySelector('.navbar-toggler');
+          if (
+            navCollapse &&
+            navCollapse.classList.contains('show') &&
+            !navCollapse.contains(e.target) &&
+            !toggler.contains(e.target) &&
+            window.innerWidth < 992
+          ) {
+            var bsCollapse = bootstrap.Collapse.getOrCreateInstance(navCollapse);
+            bsCollapse.hide();
+            document.body.classList.remove('menu-open'); // Restore scroll
+          }
+        });
+      }
     });
 
     // Automatically close mobile menu only after navbar has scrolled out of view
@@ -139,9 +141,19 @@
       ) {
         var bsCollapse = bootstrap.Collapse.getOrCreateInstance(navCollapse);
         bsCollapse.hide();
-        document.body.classList.remove('menu-open');
+        document.body.classList.remove('menu-open'); // Restore scroll and blur
       }
       lastScrollY = window.scrollY;
+    });
+
+    // Remove menu-open if navbar is removed (edge case)
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new MutationObserver(function() {
+        if (!document.getElementById('mainNav')) {
+          document.body.classList.remove('menu-open');
+        }
+      });
+      observer.observe(document.body, { childList: true });
     });
   }
 
