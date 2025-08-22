@@ -34,6 +34,7 @@ body {
 
 p {
   overflow-wrap: break-word;
+  text-justify: auto;
   font-size: 1rem;
 }
 
@@ -62,12 +63,12 @@ p {
 }
 
 .headline {
-  font-weight: 300;
-  font-size: clamp(1.7rem, 4vw, 6rem);
-  letter-spacing: .02em;
+  font-weight: 600;
+  font-size: clamp(2.8rem, 5vw, 8rem);
+  letter-spacing: .03em;
   line-height: 1.3;
   text-align: center;
-  margin-bottom: 1.4rem;
+  margin-bottom: 2rem;
 }
 
 .headline .row-gap {
@@ -75,18 +76,20 @@ p {
 }
 
 .hero img {
-  border-radius: 2rem;
+  border-radius: var(--global-radius);
 }
 
 /* Inline image tile that sits inside big text */
 
 .lead {
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.5;
+  font-size: calc(clamp(3rem, 5vh, 8rem)/2);
+  margin-top: 1rem;
 }
 
 .text-img {
-  vertical-align: -.18em
+  vertical-align: -.18em;
 }
 
 
@@ -94,12 +97,12 @@ p {
   letter-spacing: .28em;
   text-transform: uppercase;
   font-size: .85rem;
-  color: #475569
+  color: #475569;
 }
 
 .sub {
   font-size: clamp(1rem, 1.6vw, 1.4rem);
-  color: #334155
+  color: #334155;
 }
 
 /* one place to control all chips */
@@ -110,16 +113,22 @@ p {
   color: var(--brand-ink);
 }
 
+.project-icon {
+  height: 2.5em;
+  width: 2.5em;
+  color: var(--brand-ink);
+  border-radius: 0 !important;  
+}
 /* labels */
 
 /* Sections */
 .measure {
-  max-width: 56ch
+  max-width: 56ch;
 }
 
 .emoji-seq {
   text-align: center;
-  font-size: clamp(2.2rem, 8.6vw, 6rem);
+  font-size: clamp(3rem, 8vw, 5.5rem);
 
 }
 
@@ -192,6 +201,10 @@ body.cookie-banner-active {
 
 
 @media (min-width: 992px) {
+  html,
+  body {
+    font-size: 18px;
+  }
   #cookie-banner {
     top: 50%;
     bottom: auto;
@@ -241,7 +254,7 @@ body.cookie-banner-active {
   .rail {
     position: static;
     width: auto;
-    margin-top: 2rem
+    margin-top: 2rem;
   }
 
   .kicker {
@@ -294,6 +307,10 @@ img.fade-in {
   .headline {
     text-align: center;
     margin-bottom: 2rem;
+  }
+  .project-icon {
+    height: 2.5em;
+    width: 2.5em;
   }
 
   .navbar-collapse {
@@ -423,4 +440,106 @@ img.fade-in {
     color: var(--brand-ink) !important;
   }
 
+}
+
+/* Logo sizing */
+.navbar-logo {
+  height: 44px;
+  width: 44px;
+  object-fit: contain;
+}
+
+/* Desktop: logo centered, name left */
+@media (min-width: 992px) {
+  .navbar-logo-link {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  .navbar-brand {
+    position: absolute !important;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+  .navbar-name-mobile {
+    display: none;
+  }
+  .custom-hamburger {
+    position: static;
+  }
+  .navbar-logo {
+  height: 56px;
+  width: 56px;
+  object-fit: contain;
+}
+}
+
+/* Mobile: flex layout for navbar top row */
+@media (max-width: 991.98px) {
+  #mainNav {
+    z-index: 1050;
+
+    /* Prevent jumping */
+  }
+  #mainNav .container.position-relative {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.2rem;
+  }
+  #mainNavCollapse {
+    margin-top: 0 !important;
+  }
+  .navbar-logo-link {
+    position: static;
+    margin-right: 0.5rem;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+  .navbar-brand {
+    display: none !important;
+  }
+  .navbar-name-mobile {
+    display: block;
+    font-weight: 600;
+    font-size: 1.1rem;
+    flex: 1 1 0;
+    text-align: center;
+    pointer-events: none;
+    background: transparent;
+    max-width: 90vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 32px;
+    line-height: 32px;
+  }
+  .custom-hamburger {
+    position: static;
+    margin-left: 0.5rem;
+    width: 32px;
+    height: 32px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+  }
+}
+
+/* ...existing code... */
+    z-index: auto !important;
+    text-align: center;
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+  }
 }
