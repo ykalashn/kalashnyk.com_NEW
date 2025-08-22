@@ -7,7 +7,6 @@
   --brand-ink: #111827;
   /* gray-900 */
   --brand-accent: #4f9d92;
-  /* muted teal (no orange) */
   --brand-soft: #eef2f6;
   /* cool soft bg */
   --brand-line: #cbd5e1;
@@ -128,7 +127,7 @@ p {
 
 .emoji-seq {
   text-align: center;
-  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-size: clamp(2.5rem, 8vw, 5.5rem);
 
 }
 
@@ -530,16 +529,5 @@ img.fade-in {
     align-items: center;
     justify-content: center;
     flex: 0 0 auto;
-  }
-}
-
-/* ...existing code... */
-    z-index: auto !important;
-    text-align: center;
-    flex: 1 1 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 32px;
   }
 }
