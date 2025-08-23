@@ -208,6 +208,9 @@ p {
 }
 .about-img {
   max-height: 100svh !important;
+  width: auto;
+  object-fit: cover;
+  object-position: 50% 10%;
 }
 .brand-border {
   border-radius: calc(var(--global-radius)/2);

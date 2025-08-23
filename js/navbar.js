@@ -47,19 +47,29 @@
 
     document.body.insertAdjacentHTML('afterbegin', navHTML);
 
-    // Ensure navbar-collapse is always open on large screens or landscape on small screens
+    // Ensure navbar-collapse is always open on large screens
     function updateNavCollapse() {
       var navCollapse = document.getElementById('mainNavCollapse');
-      if (
-        window.innerWidth >= 992 ||
-        (window.innerWidth < 992 && window.matchMedia('(orientation: landscape)').matches)
-      ) {
+      var toggler = document.querySelector('.custom-hamburger');
+      if (!navCollapse) return;
+      if (window.innerWidth >= 992) {
+        // Desktop: show menu, reset hamburger, remove blur
         navCollapse.classList.add('show');
         document.body.classList.remove('menu-open');
+        if (toggler) toggler.setAttribute('aria-expanded', 'false');
       } else {
+        // Mobile: hide menu, reset hamburger, remove blur
         navCollapse.classList.remove('show');
+        document.body.classList.remove('menu-open');
+        if (toggler) toggler.setAttribute('aria-expanded', 'false');
+        // Only hide if currently open
+        if (navCollapse.classList.contains('show')) {
+          var bsCollapse = bootstrap.Collapse.getOrCreateInstance(navCollapse);
+          bsCollapse.hide();
+        }
       }
     }
+
     updateNavCollapse();
     window.addEventListener('resize', updateNavCollapse);
 
@@ -99,58 +109,51 @@
           }
         });
       });
+    });
 
-      // Close menu when clicking outside the navbar on mobile
-      const mainNav = document.getElementById('mainNav');
-      if (mainNav) {
-        document.addEventListener('click', function(e) {
-          var navCollapse = document.getElementById('mainNavCollapse');
-          var toggler = document.querySelector('.navbar-toggler');
+    // Hide nav on scroll down, show on scroll up, and close menu if open
+    (function () {
+      const nav = document.getElementById("mainNav");
+      const navCollapse = document.getElementById('mainNavCollapse');
+      if (!nav) return;
+      let lastScrollTop = 0;
+      const THRESHOLD = 8;
+      const TOP_LOCK = 60;
+      window.addEventListener("scroll", () => {
+        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        if (currentScroll < TOP_LOCK) {
+          nav.style.transform = "translateY(0)";
+          lastScrollTop = currentScroll;
+          return;
+        }
+        if (currentScroll > lastScrollTop + THRESHOLD) {
+          nav.style.transform = "translateY(-100%)";
+          // Close menu if open
           if (
             navCollapse &&
             navCollapse.classList.contains('show') &&
-            !navCollapse.contains(e.target) &&
-            !toggler.contains(e.target) &&
             window.innerWidth < 992
           ) {
             var bsCollapse = bootstrap.Collapse.getOrCreateInstance(navCollapse);
             bsCollapse.hide();
-            document.body.classList.remove('menu-open'); // Restore scroll
           }
-        });
-      }
-    });
+        } else if (currentScroll < lastScrollTop - THRESHOLD) {
+          nav.style.transform = "translateY(0)";
+        }
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+      }, { passive: true });
+    })();
 
-    // Automatically close mobile menu only after navbar has scrolled out of view
-    let lastScrollY = window.scrollY;
-    let navHidden = false;
-    const nav = document.getElementById('mainNav');
-
-    window.addEventListener('scroll', function() {
-      var navCollapse = document.getElementById('mainNavCollapse');
-      if (!nav) return;
-
-      // Check if navbar is out of view (scrolled up)
-      const navRect = nav.getBoundingClientRect();
-      if (navRect.bottom <= 0) {
-        navHidden = true;
-      } else {
-        navHidden = false;
-      }
-
-      // Only close menu if navbar is hidden and menu is open
-      if (
-        navCollapse &&
-        navCollapse.classList.contains('show') &&
-        window.innerWidth < 992 &&
-        navHidden
-      ) {
-        var bsCollapse = bootstrap.Collapse.getOrCreateInstance(navCollapse);
-        bsCollapse.hide();
-        document.body.classList.remove('menu-open'); // Restore scroll and blur
-      }
-      lastScrollY = window.scrollY;
-    });
+    // Use Bootstrap collapse events to toggle menu-open class on body
+    const navCollapse = document.getElementById('mainNavCollapse');
+    if (navCollapse) {
+      navCollapse.addEventListener('show.bs.collapse', function () {
+        document.body.classList.add('menu-open');
+      });
+      navCollapse.addEventListener('hide.bs.collapse', function () {
+        document.body.classList.remove('menu-open');
+      });
+    }
 
     // Remove menu-open if navbar is removed (edge case)
     document.addEventListener('DOMContentLoaded', function() {
