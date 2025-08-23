@@ -457,14 +457,14 @@ img.fade-in {
    font-size: 1.1rem;
    flex: 1 1 0;
    text-align: center;
-   pointer-events: none;
+   text-decoration: none;
    background: transparent;
    max-width: 90vw;
    white-space: nowrap;
-   overflow: hidden;
    text-overflow: ellipsis;
    height: 32px;
    line-height: 32px;
+   color: var(--brand-ink);
   }
   .custom-hamburger {
    position: static;
@@ -476,5 +476,37 @@ img.fade-in {
    align-items: center;
    justify-content: center;
    flex: 0 0 auto;
+  }
+}
+
+/* Ensure nav links are clickable on mobile */
+@media (max-width: 991.98px) {
+  .navbar-collapse,
+  .navbar-nav .nav-link {
+    pointer-events: auto;
+  }
+}
+
+/* Animated press effect for nav links */
+.nav-link-pressed {
+  animation: navLinkPressed 0.32s cubic-bezier(.4,2,.3,1);
+}
+
+@keyframes navLinkPressed {
+  0% {
+    transform: scale(1);
+    background: transparent;
+  }
+  30% {
+    transform: scale(0.92);
+    background: rgba(79,157,146,0.08); /* subtle accent */
+  }
+  70% {
+    transform: scale(1.04);
+    background: rgba(79,157,146,0.12);
+  }
+  100% {
+    transform: scale(1);
+    background: transparent;
   }
 }

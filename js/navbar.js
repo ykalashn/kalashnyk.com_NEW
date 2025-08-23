@@ -15,10 +15,10 @@
       <span class="navbar-name">Yevhenii Kalashnyk</span>
     </a>
     <!-- Logo left, name center, hamburger right on mobile -->
-    <a class="navbar-logo-link d-flex align-items-center justify-content-center mx-auto" href="index.html" >
+    <a class="navbar-logo-link d-flex align-items-center justify-content-center mx-auto" href="about.html" >
       <img src="images/logo.svg" alt="Logo" class="navbar-logo" />
     </a>
-    <span class="navbar-name-mobile fw-semibold d-lg-none">Yevhenii Kalashnyk</span>
+    <a class="navbar-name-mobile fw-semibold d-lg-none" href="index.html">Yevhenii Kalashnyk</a>
     <button class="navbar-toggler custom-hamburger" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavCollapse" aria-controls="mainNavCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="custom-hamburger-icon">
         <span></span>
@@ -83,7 +83,13 @@
       if (!navCollapse) return;
       var navLinks = navCollapse.querySelectorAll('.nav-link');
       navLinks.forEach(function(link) {
-        link.addEventListener('click', function() {
+        link.addEventListener('click', function(e) {
+          // Animate press
+          link.classList.add('nav-link-pressed');
+          setTimeout(function() {
+            link.classList.remove('nav-link-pressed');
+          }, 320);
+
           if (window.innerWidth < 992) {
             var bsCollapse = bootstrap.Collapse.getOrCreateInstance(navCollapse);
             setTimeout(function() {

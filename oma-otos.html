@@ -28,7 +28,7 @@
   <script src="js/navbar.js"></script>
 
   <!-- HERO -->
-  <header class="hero py-5 py-lg-6 border-bottom">
+  <header class="hero">
     <div class="container col-xxl-9 px-3 px-md-4 content-narrow">
       <div class="row align-items-center g-4 g-lg-5 py-4">
         <div class="col-lg">
@@ -50,31 +50,38 @@
     </div>
   </header>
   <!-- META GRID -->
-  <section class="py-4 bg-light border-bottom">
-    <div class="container col-xxl-9 px-3 px-md-4 content-narrow">
-      <div class="row g-4 justify-content-between">
-        <div class="col-6 col-lg-5">
-          <small class="text-secondary">Role</small>
-          <div class="fw-semibold">UX researcher &amp; designer</div>
-        </div>
-        <div class="col-6 col-lg-5">
-          <small class="text-secondary">Team</small>
-          <div class="fw-semibold">4 people: research, design, product, marketing</div>
-        </div>
-        <div class="col-6 col-lg-5">
-          <small class="text-secondary">Timeline</small>
-          <div class="fw-semibold">Jun–Aug 2024 (3 months)</div>
-        </div>
-        <div class="col-6 col-lg-5">
-          <small class="text-secondary">Status</small>
-          <div class="fw-semibold">Prototype &amp; handoff</div>
-        </div>
+   <section class="project-section case-meta">
+  <div class="container col-xxl-9 content-narrow">
+
+   <div class="row border-bottom py-3">
+      <div class="col-3 col-md-3 meta-label">Role</div>
+      <div class="col-9 col-md-9 text-end">
+        <span class="badge chip">UX researcher</span>
+        <span class="badge chip">Designer</span>
       </div>
     </div>
-  </section>
+
+     <div class="row border-bottom py-3">
+      <div class="col-3 col-md-3 meta-label">Timeline</div>
+      <div class="col-9 col-md-9 text-end">
+        <span class="badge chip">Jun–Aug 2024</span>
+      </div>
+    </div>
+
+    <div class="row py-3">
+      <div class="col-3 col-md-3 meta-label">Status</div>
+      <div class="col-9 col-md-9 text-end">
+        <span class="badge chip">Prototype & handoff</span>
+
+
+      </div>
+    </div>
+
+  </div>
+</section>
   <!-- INSPIRATION + HIGHLIGHTS -->
-  <section class="py-5">
-    <div class="container col-xxl-9 px-3 px-md-4 content-narrow">
+  <section class="project-section">
+    <div class="container col-xxl-9 px-md-4 content-narrow">
       <h2 class="h3">Inspiration</h2>
       <p class="mt-3">Otos Health wanted to empower people with personalised insights into their hearing. During the ITP
         Summer programme, our brief was to design an app that not only delivered test results but also kept users
@@ -83,23 +90,25 @@
       <p>Our team — Aili Campbell, Juho Karkinen, Noora Ferm and I — set out to make intangible auditory data relatable.
         We believed that combining clear visuals, personalised recommendations and educational content could transform
         how people perceive their hearing health.</p>
-      <img src="images/Bootsies.jpg" alt="Photo of OmaOtos team." class="img-fluid rounded-3 shadow-soft mb-3 mt-2">
-      <div class="p-4 bg-white border rounded-3 shadow-soft mt-4">
-        <h3 class="h6 text-secondary mb-3">Highlights</h3>
-        <ul class="mb-0 small">
+      <img src="images/Bootsies.jpg" alt="Photo of OmaOtos team." class="img-fluid brand-border shadow-sm mt-2">
+    </div>
+  </section>
+  <section class="project-section">
+    <div class="container col-xxl-9 px-md-4 content-narrow">
+      <h2 class="h3">Highlights</h2>
+        <ul class="mt-3">
           <li class="mb-2">Personalised hearing test results delivered via mobile app</li>
           <li class="mb-2">Educational content integrated into result screens to sustain motivation</li>
           <li class="mb-2">Hero’s journey narrative framing to make progress feel meaningful</li>
           <li>100% of testers reported better understanding of their results</li>
         </ul>
-      </div>
     </div>
   </section>
   <!-- PROBLEM / SOLUTION -->
-  <section class="py-5">
-    <div class="container col-xxl-9 px-3 px-md-4 content-narrow">
+  <section class="project-section">
+    <div class="container col-xxl-9 px-md-4 content-narrow">
       <!-- Problem -->
-      <div class="mb-5">
+      
         <h2 class="h3">Problem</h2>
         <p class="mt-3">Hearing tests can be intimidating and results are often hard to interpret. Many users complete a
           test but then drop off, unsure of what to do next. Otos wanted to reduce this leaky pipeline and ensure that
@@ -112,8 +121,13 @@
             <li>Need to make intangible data feel personal and actionable</li>
           </ul>
         </div>
+
       </div>
+  </section>
       <!-- Solution -->
+    <section class="project-section">
+    <div class="container col-xxl-9 px-md-4 content-narrow">
+      <!-- Problem -->
       <div>
         <h2 class="h3">Solution</h2>
         <!-- <img src="images/omaotos-illustration.png" alt="OmaOtos illustration" class="img-fluid rounded-3 shadow-soft mb-3"> -->
@@ -127,41 +141,17 @@
             <li>Provide educational tips and exercises at appropriate points</li>
             <li>Offer next‑step recommendations to keep users engaged</li>
           </ul>
-        </div>
+
       </div>
     </div>
   </section>
-  <!-- EXPERIENCE DESIGN -->
-  <!-- <section class="py-5">
-    <div class="container col-xxl-9 px-3 px-md-4 content-narrow">
-      <h2 class="h3 mb-4">Experience design</h2>
-      <div class="row g-4">
-        <div class="col-md-6">
-          <div class="p-4 bg-white border rounded-3 shadow-soft h-100">
-            <h3 class="h5">User flow</h3>
-            <p class="small text-secondary">Users begin by taking a hearing test.  They then enter a personalised journey that explains their results in stages, with visuals and stories tailored to their profile.  Progress is tracked and celebrated along the way.</p>
-            <div class="placeholder-tile rounded-3 mt-3"></div>
-            <div class="form-text">Placeholder for user journey mockup</div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="p-4 bg-white border rounded-3 shadow-soft h-100">
-            <h3 class="h5">Health professional view</h3>
-            <p class="small text-secondary">Audiologists and health professionals can view aggregated data, send follow‑up recommendations and understand where users drop off.  The dashboard encourages collaborative care.</p>
-            <div class="placeholder-tile rounded-3 mt-3" style="background:linear-gradient(135deg,#eef2ff,#e0f2fe);"></div>
-            <div class="form-text">Placeholder for professional dashboard mockup</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
   <!-- PROCESS & CONTRIBUTION -->
-  <section class="py-5">
-    <div class="container col-xxl-9 px-3 px-md-4 content-narrow">
+  <section class="project-section">
+    <div class="container col-xxl-9 px-md-4 content-narrow">
       <h2 class="h3 mb-4">My process &amp; contribution</h2>
       <div class="row g-4">
         <div class="col-md-6">
-          <div class="p-4 bg-white border rounded-3 shadow-soft h-100">
+          <div class="p-4 bg-white border brand-border h-100">
             <div class="d-flex align-items-center mb-2">
               <i class="bi bi-search text-success fs-3 me-2"></i>
               <h3 class="h5">Research & discovery</h3>
@@ -174,7 +164,7 @@
           </div>
         </div>
         <div class="col-md-6">
-          <div class="p-4 bg-white border rounded-3 shadow-soft h-100">
+          <div class="p-4 bg-white border brand-border  h-100">
             <div class="d-flex align-items-center mb-2">
               <i class="bi bi-pen text-success fs-3 me-2"></i>
               <h3 class="h5">Concept & narrative</h3>
@@ -187,7 +177,7 @@
           </div>
         </div>
         <div class="col-md-6">
-          <div class="p-4 bg-white border rounded-3 shadow-soft h-100">
+          <div class="p-4 bg-white border brand-border  h-100">
             <div class="d-flex align-items-center mb-2">
               <i class="bi bi-rocket text-success fs-3 me-2"></i>
               <h3 class="h5">Prototype & testing</h3>
@@ -200,7 +190,7 @@
           </div>
         </div>
         <div class="col-md-6">
-          <div class="p-4 bg-white border rounded-3 shadow-soft h-100">
+          <div class="p-4 bg-white border brand-border  h-100">
             <div class="d-flex align-items-center mb-2">
               <i class="bi bi-award text-success fs-3 me-2"></i>
               <h3 class="h5">Impact & lessons</h3>
@@ -216,53 +206,28 @@
     </div>
   </section>
   <!-- RESULTS / REFLECTION -->
-  <section class="py-5">
-    <div class="container col-xxl-9 px-3 px-md-4 content-narrow">
+  <section class="project-section">
+    <div class="container col-xxl-9  px-md-4 content-narrow">
       <h2 class="h3">What I learned</h2>
       <p class="mt-3">OmaOtos reinforced the importance of storytelling in health. Turning data into a journey kept
         users engaged and helped them internalise recommendations. Working closely with audiologists taught me the value
         of bridging expert knowledge with everyday language.</p>
-      <div class="p-4 bg-white border rounded-3 shadow-soft mt-4">
-        <h3 class="h6 text-secondary">Project status</h3>
-        <p class="small mb-0">The prototype and design guidelines were handed off to Otos Health for further
-          development.</p>
-      </div>
     </div>
   </section>
-  <!-- GALLERY -->
-  <!-- <section class="py-5 bg-light">
-    <div class="container col-xxl-9 px-3 px-md-4">
-      <h2 class="h3 mb-3">Gallery &amp; artifacts</h2>
-      <p class="text-secondary small">Visualise the OmaOtos concept.  Replace these placeholders with app screens and branding assets when available.</p>
-      <div class="row g-4 mt-1">
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="images/omaotos-illustration.png" class="text-decoration-none">
-            <img src="images/omaotos-illustration.png" class="img-fluid rounded-3 shadow-soft" alt="OmaOtos illustration">
-            <div class="form-text">Concept illustration</div>
-          </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="#" class="text-decoration-none">
-            <div class="placeholder-tile rounded-3"></div>
-            <div class="form-text">Placeholder</div>
-          </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="#" class="text-decoration-none">
-            <div class="placeholder-tile rounded-3"></div>
-            <div class="form-text">Placeholder</div>
-          </a>
-        </div>
-      </div>
+  <section class="project-section">
+    <div class="container col-xxl-9 px-md-4 content-narrow">
+      <h2 class="h3">Project status</h2>
+      <p class="mt-3">The prototype and design guidelines were handed off to Otos Health for further
+          development.</p>
     </div>
-  </section> -->
+  </section>
   <!-- MEDIA & COVERAGE -->
-  <section class="py-5">
+  <section class="project-section">
     <div class="container col-xxl-9 px-3 px-md-4 content-narrow">
       <h2 class="h3 mb-4">Media &amp; coverage</h2>
       <div class="row g-4">
         <div class="col-md-6">
-          <div class="p-3 bg-white border rounded-3 shadow-soft h-100 d-flex">
+          <div class="p-3 bg-white border brand-border shadow-sm h-100 d-flex">
             <div class="me-3"><i class="bi bi-journal-code fs-3 text-primary"></i></div>
             <div>
               <h3 class="h6 mb-1"><a href="https://ailicampbell.com/omaotos" target="_blank" rel="noreferrer"
@@ -277,11 +242,14 @@
     </div>
   </section>
   <!-- OTHER PROJECTS -->
-  <section class="py-5 bg-light border-top">
-    <div class="container col-xxl-9 px-3 px-md-4">
-      <h2 class="h3 mb-4">Other projects</h2>
+  <section class="py-5">
+    <div class="container col-xxl-9 px-3 px-md-4 content-narrow">
+      <h2 class="h3 mb-3 d-flex align-items-center">
+        <img src="images/moreprojects.svg" alt="Other projects icon" class="project-icon me-2">
+        Other projects
+      </h2>
       <div class="row g-4">
-        <div class="col-12 col-md-6 col-lg-4">
+        <div class="col-12 col-md-6">
           <div class="card shadow-sm border-0 h-100">
             <img src="images/tassu-icons.png" class="card-img-top" alt="Tassu Passu icons">
             <div class="card-body d-flex flex-column">
@@ -292,7 +260,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4">
+        <div class="col-12 col-md-6">
           <div class="card shadow-sm border-0 h-100">
             <img src="images/uplift.png" class="card-img-top" alt="Uplift illustration">
             <div class="card-body d-flex flex-column">
@@ -309,7 +277,7 @@
   <!-- CTA -->
   <section class="py-5" id="contact">
     <div class="container text-center">
-      <h2 class="h4 mb-3">Inspired by this case? Get in touch</h2>
+      <h2 class="h3 mb-3">Inspired by this case? <br> Get in touch</h2>
       <p class="text-secondary mb-4">Email me, connect on LinkedIn, or check my GitHub.</p>
       <div class="d-flex flex-wrap gap-2 justify-content-center">
         <a class="btn btn-dark rounded-pill" href="mailto:hello@kalashnyk.com"><i
