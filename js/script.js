@@ -45,9 +45,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Consent check
   const consent = localStorage.getItem('cookiesConsent');
-  if (consent !== 'accepted') {
+  if (consent === null) {
     showBanner();
-  } else {
+  } else if (consent === 'accepted') {
     loadAnalytics();
   }
 
