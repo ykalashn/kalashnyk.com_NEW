@@ -87,7 +87,7 @@ margin-top: 1rem;
   4. Layout Containers
   ========================= */
 .content-narrow {
-  max-width: 740px;
+  max-width: 60ch;
 }
 
 .measure {
@@ -256,7 +256,7 @@ margin-top: 1rem;
   border-radius: var(--global-radius);
   white-space: nowrap;
   color: var(--brand-ink);
-  font-size: clamp(0.75rem, 0.5rem + 1vw, 1rem);
+  font-size: clamp(0.875rem, 0.875rem + 0.15vw, 1.0625rem);
   margin: 0.2rem 0.1rem;
 }
 
