@@ -251,27 +251,6 @@ p {
 }
 
 /* =========================
-  10. Cookie Banner
-  ========================= */
-#cookie-banner {
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 0;
-  z-index: 9000;
-}
-.cookie-banner-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(15, 23, 42, 0.65);
-  z-index: 1999;
-  pointer-events: auto;
-  transition: opacity 0.5s;
-}
-body.cookie-banner-active {
-  overflow: hidden;
-}
-
-/* =========================
   11. Fade-in Animation
   ========================= */
 .fade-in {
@@ -310,27 +289,6 @@ img.fade-in {
   html,
   body {
    font-size: 18px;
-  }
-  #cookie-banner {
-   top: 50%;
-   bottom: auto;
-   transform: translate(-50%, -50%);
-   width: auto;
-  }
-  #cookie-banner .cookie-banner>div {
-   max-width: 600px;
-   padding: 2rem;
-  }
-  #cookie-banner p {
-   text-align: left !important;
-  }
-  #cookie-banner .d-flex.flex-row.flex-lg-column {
-   flex-direction: column !important;
-   align-items: flex-start !important;
-   width: 100%;
-  }
-  #cookie-banner button {
-   width: 100%;
   }
   .headline {
    text-align: center;
