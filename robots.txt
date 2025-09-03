@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kalashnyk.com/sitemap.xml
+Sitemap: https://www.kalashnyk.com/sitemap.xml
