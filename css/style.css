@@ -222,7 +222,7 @@ margin-top: 1rem;
   object-position: 50% 10%;
 }
 .brand-border {
-  border-radius: calc(var(--global-radius)/2);
+  border-radius: calc(var(--global-radius)/2)!important;
 }
 
 /* =========================
