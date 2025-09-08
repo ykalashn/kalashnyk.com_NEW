@@ -23,130 +23,148 @@
   </noscript>
   <link rel="stylesheet" href="css/style.css">
   <style>
-:root {
-  --about-text-height: 500px;
-}
-.timeline {
-position: relative;
-margin: 0 auto;
-padding: 0;
-max-width: 900px;
-}
-.timeline-item {
-position: relative;
-padding-bottom: 2.5rem;
-}
-.timeline-point {
-position: absolute;
-top: 0;
-left: 0;
-transform: translateX(-50%);
-background-color: var(--brand-highlight);
-border: 0.7px solid var(--brand-ink);
-width: 18px;
-height: 18px;
-border-radius: 50%;
-z-index: 1;
-padding: 0;
-}
-.timeline-line {
-position: absolute;
-top: 20px; /* start just below dot */
-bottom: 0; /* extend until container bottom */
-left: 0;
-transform: translateX(-0.5px);
-width: 1px;
-background-image: linear-gradient(var(--brand-ink) 60%, rgba(0,0,0,0) 0);
-background-size: 1px 8px;
-background-repeat: repeat-y;
-z-index: 0;
-}
-.timeline-item:last-child .timeline-line {
-display: none;
-}
-.timeline-content {
-padding: 0 2rem;
-}
-.timeline-date {
-font-weight: 700;
-text-transform: uppercase;
-font-size: 0.9rem;
-color: var(--brand-accent);
-}
-.timeline-role {
-font-weight: 700;
-margin-top: 0.25rem;
-}
-.timeline-where {
-margin-bottom: 0.75rem;
-}
-/* Animations */
-.timeline-item {
-opacity: 0;
-transform: translateY(20px);
-transition: all 0.5s ease;
-}
-.timeline-item.reveal {
-opacity: 1;
-transform: translateY(0);
-}
+    :root {
+      --about-text-height: 500px;
+    }
+
+    .timeline {
+      position: relative;
+      margin: 0 auto;
+      padding: 0;
+      max-width: 900px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 2.5rem;
+    }
+
+    .timeline-point {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-50%);
+      background-color: var(--brand-highlight);
+      border: 0.7px solid var(--brand-ink);
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      z-index: 1;
+      padding: 0;
+    }
+
+    .timeline-line {
+      position: absolute;
+      top: 20px;
+      bottom: 0;
+      left: 0;
+      transform: translateX(-0.5px);
+      width: 1px;
+      background-image: linear-gradient(var(--brand-ink) 60%, rgba(0, 0, 0, 0) 0);
+      background-size: 1px 8px;
+      background-repeat: repeat-y;
+      z-index: 0;
+    }
+
+    .timeline-item:last-child .timeline-line {
+      display: none;
+    }
+
+    .timeline-content {
+      padding: 0 2rem;
+    }
+
+    .timeline-date {
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      color: var(--brand-accent);
+    }
+
+    .timeline-role {
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .timeline-where {
+      margin-bottom: 0.75rem;
+    }
+
+    .timeline-item {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+    }
+
+    .timeline-item.reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
-</head>
-
-<body>
-
-  <script src="js/navbar.js"></script>
-  <section class="hero-ish">
-    <div class="container col-xxl-9 px-3 px-md-4">
-      <div class="row align-items-center justify-content-center">
-        <h2 class="h2 mb-5 d-none d-md-block">My journey</h2>
-        <div class="col-11 col-md-6 col-lg-7 order-2 order-md-1 pe-lg-5" id="about-text">
-          <h2 class="h2 mb-3 d-md-none">My journey</h2>
-          <p class="measure hyphens">Born and raised in rural Ukraine, I grew up surrounded by cherry trees and a tight-knit community. Today,
-            I’m based in Helsinki, pursuing a master’s degree in marketing at Aalto University. My path from a small
-            village to one of Europe’s leading innovation hubs has been filled with diverse experiences: from
-            volunteering in kindergartens and organising events to designing user interfaces and pitching at
-            international competitions.</p>
-          <p class="measure hyphens">Along the way I’ve learned to bridge cultures and disciplines. I taught English and robotics to
-            preschoolers in Estonia, built human-friendly cybersecurity tools, gamified elevator rides for KONE, and
-            helped improve hearing health through storytelling. These experiences taught me empathy, adaptability and
-            the power of simple narratives.</p>
-          <p class="measure hyphens">As a vegan and member of the LGBTQ+ community, I care deeply about inclusion and
-            sustainability. I’m currently applying for Finnish citizenship and learning Finnish (slowly but
-            surely). When I’m not studying, you’ll find me exploring Helsinki’s museums, hosting community events,
-            or networking at events like Slush or Junction. I’m also learning to play the piano!</p>
-        </div>
-        <div class="col-11 col-md-6 col-lg-5 order-md-2 pb-5 pb-md-0 d-flex align-items-center align-items-md-start h-100">
-          <img class="img-fluid about-img"
-            src="https://res.cloudinary.com/yevhenii-kalashnyk/image/upload/q_auto/ar_6:7,c_crop,g_face,w_750/yev-og_dnn7cy.png"
-            alt="Photo of Yevhenii Kalashnyk"
-            style="height: 100%; max-height: 100%; object-fit: cover; width: auto;">
-        </div>
-      </div>
-    </div>
-  </section>
   <script>
-    window.addEventListener('load', function () {
+    function adjustAboutImgHeight() {
       var text = document.getElementById('about-text');
-      var img = document.querySelector('.about-img');
+      var img = document.querySelector('.about-img-special');
       if (text && img) {
         var height = text.offsetHeight;
         img.style.maxHeight = height + 'px';
       }
-    });
-  </script>
+    }
 
+    window.addEventListener('DOMContentLoaded', adjustAboutImgHeight);
+    window.addEventListener('resize', adjustAboutImgHeight);
+  </script>
+</head>
+<body>
+  <script src="js/navbar.js"></script>
+  <section class="hero-ish">
+    <div class="container col-xxl-9 px-3 px-lg-4">
+      <div class="row align-items-center justify-content-center">
+        <h2 class="h2 mb-5 d-none d-lg-block">My journey</h2>
+        <div class="col-11 col-md-12 col-lg-6 col-xl-7 order-2 order-lg-1 pe-lg-5" id="about-text">
+          <h2 class="h2 mb-3 d-lg-none">My journey</h2>
+          <p class="measure hyphens">Born and raised in rural Ukraine, I grew up surrounded by cherry trees and a
+            tight-knit community. Today,
+            I’m based in Helsinki, pursuing a master’s degree in marketing at Aalto University. My path from a small
+            village to one of Europe’s leading innovation hubs has been filled with diverse experiences: from
+            volunteering in kindergartens and organising events to designing user interfaces and pitching at
+            international competitions.</p>
+          <p class="measure hyphens">Along the way I’ve learned to bridge cultures and disciplines. I taught English and
+            robotics to
+            preschoolers in Estonia, built human-friendly cybersecurity tools, gamified elevator rides for KONE, and
+            helped improve hearing health through storytelling. These experiences taught me empathy, adaptability and
+            the power of simple narratives.</p>
+          <p class="measure hyphens mb-0">As a vegan and member of the LGBTQ+ community, I care deeply about inclusion and
+            sustainability. I’m currently applying for Finnish citizenship and learning Finnish (slowly but
+            surely). When I’m not studying, you’ll find me exploring Helsinki’s museums, hosting community events,
+            or networking at events like Slush or Junction. I’m also learning to play the piano!</p>
+        </div>
+        <div
+          class="col-11 col-md-12 col-lg-6 col-xl-5 order-lg-2 pb-5 pb-lg-0 d-flex align-items-center align-items-lg-start h-100">
+          <img class="img-fluid about-img d-md-none"
+            src="https://res.cloudinary.com/yevhenii-kalashnyk/image/upload/yev-mobile-view_sxuh0z.png"
+            alt="Photo of Yevhenii Kalashnyk" style="min-height: 272px; height: 100%; max-height: 100%; object-fit: cover; width: auto;">
+            <img class="img-fluid about-img d-none d-md-block d-lg-none"
+            src="https://res.cloudinary.com/yevhenii-kalashnyk/image/upload/ar_16:9,c_auto,g_face/f_webp/q_auto/dpr_auto/yev-og.png"
+            alt="Photo of Yevhenii Kalashnyk" style="min-height: 386px; height: 100%; max-height: 100%; object-fit: cover; width: auto;">
+            <img class="img-fluid about-img about-img-special d-none d-lg-block"
+            src="https://res.cloudinary.com/yevhenii-kalashnyk/image/upload/ar_3:3,c_auto,g_face/yev-mobile-view_sxuh0z.png"
+            alt="Photo of Yevhenii Kalashnyk" style="height: 100%; max-height: 100%; object-fit: cover; width: 100%;">
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="pb-5">
     <div class="container col-xxl-9 px-3 px-md-4">
       <div class="row justify-content-center justify-content-md-between">
-        <div class="col-11 col-md-6 col-lg-7 mt-5 mt-md-auto">
+        <div class="col-11 col-md-6 col-lg-7 mt-5 mt-md-auto pe-lg-5">
           <h2 class="fw-bold mb-4">Experience</h2>
           <div class="timeline">
             <div class="row timeline-item">
               <div class="timeline-point"></div>
               <div class="timeline-line"></div>
               <div class="ps-md-4 timeline-content">
-                <div class="timeline-date">Feb 2024 — Aug 2024</div>
+                <div class="timeline-date">Feb 2024 - Aug 2024</div>
                 <div class="timeline-role">People & Community Manager</div>
                 <div class="text-secondary timeline-where">Junction, Espoo</div>
                 <ul>
@@ -163,7 +181,8 @@ transform: translateY(0);
                 <div class="timeline-role">UX Designer, co-founder</div>
                 <div class="text-secondary timeline-where">Tassu Passu Oy, Helsinki</div>
                 <ul>
-                  <li>Co-developed a child-friendly authentication app that won €10,000 at Junction 2019 for innovation in digital security</li>
+                  <li>Co-developed a child-friendly authentication app that won €10,000 at Junction 2019 for innovation
+                    in digital security</li>
                   <li>Led branding, visual identity, and product storytelling</li>
                   <li>Secured an additional €1,500 in a separate competition</li>
                 </ul>
@@ -173,11 +192,12 @@ transform: translateY(0);
               <div class="timeline-point"></div>
               <div class="timeline-line"></div>
               <div class="ps-md-4 timeline-content">
-                <div class="timeline-date">Nov 2018 — Dec 2022</div>
+                <div class="timeline-date">Nov 2018 - Dec 2022</div>
                 <div class="timeline-role">Product Manager, co-founder</div>
                 <div class="text-secondary timeline-where">Floor 21 Oy, Helsinki</div>
                 <ul>
-                  <li>Developed a KONE-branded video game with a three-person team, managing the project using Scrum methodology</li>
+                  <li>Developed a KONE-branded video game with a three-person team, managing the project using Scrum
+                    methodology</li>
                   <li>Pitched the game to KONE top management; project acquired for €18,600</li>
                   <li>Stakeholder communication and presenting complex ideas</li>
                 </ul>
@@ -193,7 +213,8 @@ transform: translateY(0);
                 <ul>
                   <li>Assisted lead teacher in developing and implementing curriculum for preschool students</li>
                   <li>Taught English, robotics, and programming</li>
-                  <li>Led training sessions on integrating robotics in early education for international delegations of teachers</li>
+                  <li>Led training sessions on integrating robotics in early education for international delegations of
+                    teachers</li>
                 </ul>
               </div>
             </div>
@@ -202,7 +223,6 @@ transform: translateY(0);
         <div class="col-11 col-md-6 col-lg-5">
           <h2 class="fw-bold mb-4">Skills</h2>
           <div>
-            
             <span class="badge chip">Marketing strategy</span>
             <span class="badge chip">Branding</span>
             <span class="badge chip">UX Design</span>
@@ -212,7 +232,6 @@ transform: translateY(0);
           </div>
           <h2 class="fw-bold mt-5 mb-4">Tools</h2>
           <div>
-            
             <span class="badge chip">PowerBI</span>
             <span class="badge chip">Tableau</span>
             <span class="badge chip">SQL</span>
@@ -222,10 +241,8 @@ transform: translateY(0);
             <span class="badge chip">Miro</span>
             <span class="badge chip">Notion</span>
             <span class="badge chip">Scrum</span>
-
           </div>
         </div>
-        
       </div>
     </div>
   </section>
@@ -246,7 +263,6 @@ transform: translateY(0);
       </div>
     </div>
   </section>
-
   <script>
     const items = document.querySelectorAll('.timeline-item');
     const observer = new IntersectionObserver(entries => {
@@ -257,11 +273,9 @@ transform: translateY(0);
         }
       });
     }, { threshold: 0.1 });
-
     items.forEach(item => {
       observer.observe(item);
     });
   </script>
 </body>
-
 </html>
