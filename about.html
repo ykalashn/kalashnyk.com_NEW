@@ -23,6 +23,9 @@
   </noscript>
   <link rel="stylesheet" href="css/style.css">
   <style>
+:root {
+  --about-text-height: 500px;
+}
 .timeline {
 position: relative;
 margin: 0 auto;
@@ -93,39 +96,50 @@ transform: translateY(0);
 <body>
 
   <script src="js/navbar.js"></script>
-  <section class="py-5">
+  <section class="hero-ish">
     <div class="container col-xxl-9 px-3 px-md-4">
-      <div class="row align-items-center justify-content-center justify-content-md-between">
-        <div class="col-11 col-md-6 col-lg-5 order-2 order-md-1 mt-5 mt-md-auto">
-          <h2 class="h3 mb-3">My journey</h2>
-          <p class="hyphens">Born and raised in rural Ukraine, I grew up surrounded by cherry trees and a tight-knit community. Today,
+      <div class="row align-items-center justify-content-center">
+        <h2 class="h2 mb-5 d-none d-md-block">My journey</h2>
+        <div class="col-11 col-md-6 col-lg-7 order-2 order-md-1 pe-lg-5" id="about-text">
+          <h2 class="h2 mb-3 d-md-none">My journey</h2>
+          <p class="measure hyphens">Born and raised in rural Ukraine, I grew up surrounded by cherry trees and a tight-knit community. Today,
             I’m based in Helsinki, pursuing a master’s degree in marketing at Aalto University. My path from a small
             village to one of Europe’s leading innovation hubs has been filled with diverse experiences: from
             volunteering in kindergartens and organising events to designing user interfaces and pitching at
             international competitions.</p>
-          <p class="hyphens">Along the way I’ve learned to bridge cultures and disciplines. I taught English and robotics to
+          <p class="measure hyphens">Along the way I’ve learned to bridge cultures and disciplines. I taught English and robotics to
             preschoolers in Estonia, built human-friendly cybersecurity tools, gamified elevator rides for KONE, and
             helped improve hearing health through storytelling. These experiences taught me empathy, adaptability and
             the power of simple narratives.</p>
-          <p class="mb-4 hyphens">As a vegan and member of the LGBTQ+ community, I care deeply about inclusion and
+          <p class="measure hyphens">As a vegan and member of the LGBTQ+ community, I care deeply about inclusion and
             sustainability. I’m currently applying for Finnish citizenship and learning Finnish (slowly but
             surely). When I’m not studying, you’ll find me exploring Helsinki’s museums, hosting community events,
             or networking at events like Slush or Junction. I’m also learning to play the piano!</p>
-
         </div>
-        <div class="col-11 col-md-6 col-lg-5 order-md-2">
-          <img class="img-fluid about-img shadow-sm mb-3 mt-2 w-100"
-            src="https://res.cloudinary.com/yevhenii-kalashnyk/image/upload/f_auto,q_auto/ar_3:4,c_crop,g_face,w_750/yev-og_dnn7cy.jpg"
-            alt="Photo of Yevhenii Kalashnyk">
+        <div class="col-11 col-md-6 col-lg-5 order-md-2 pb-5 pb-md-0 d-flex align-items-center align-items-md-start h-100">
+          <img class="img-fluid about-img"
+            src="https://res.cloudinary.com/yevhenii-kalashnyk/image/upload/q_auto/ar_6:7,c_crop,g_face,w_750/yev-og_dnn7cy.png"
+            alt="Photo of Yevhenii Kalashnyk"
+            style="height: 100%; max-height: 100%; object-fit: cover; width: auto;">
         </div>
       </div>
     </div>
   </section>
+  <script>
+    window.addEventListener('load', function () {
+      var text = document.getElementById('about-text');
+      var img = document.querySelector('.about-img');
+      if (text && img) {
+        var height = text.offsetHeight;
+        img.style.maxHeight = height + 'px';
+      }
+    });
+  </script>
 
   <section class="pb-5">
     <div class="container col-xxl-9 px-3 px-md-4">
       <div class="row justify-content-center justify-content-md-between">
-        <div class="col-11 col-md-6 mt-5 mt-md-auto">
+        <div class="col-11 col-md-6 col-lg-7 mt-5 mt-md-auto">
           <h2 class="fw-bold mb-4">Experience</h2>
           <div class="timeline">
             <div class="row timeline-item">
@@ -185,7 +199,7 @@ transform: translateY(0);
             </div>
           </div>
         </div>
-        <div class="col-11 col-md-6">
+        <div class="col-11 col-md-6 col-lg-5">
           <h2 class="fw-bold mb-4">Skills</h2>
           <div>
             
