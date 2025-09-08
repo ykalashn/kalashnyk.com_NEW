@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap'); 
 
 :root {
   /* Brand Colors */
@@ -11,7 +11,9 @@
   --globalnav-background: #eef2f6;
   --global-radius: 2rem;
   --brand-white: #ffffff;
-  --titles-font-size: clamp(2.5rem, 0.4861rem + 6.4444vw, 6.125rem);
+  --titles-font-size: clamp(42px, 42px + 2.4167vw, 98px);
+  --global-section-padding: clamp(3.5rem, 3.5rem + 3.9167vw, 9.375rem);
+  --large-section-card-padding: clamp(2rem, 2rem + 2vw, 5rem);
 }
 
 /* =========================
@@ -21,7 +23,7 @@ html,
 body {
   background: var(--brand-soft);
   color: var(--brand-ink);
-  font-size: 16px;
+  font-size: 17px;
   margin: 0;
   padding: 0;
   quotes: "“" "”";
@@ -46,9 +48,9 @@ p {
 }
 
 .headline {
-  font-weight: 600;
+  font-weight: 800;
   font-size: var(--titles-font-size);
-  letter-spacing: .03em;
+  letter-spacing: -0.02em;
   line-height: 1.2;
   text-align: center;
   margin-bottom: 2rem;
@@ -59,15 +61,11 @@ p {
 
 .lead {
   font-weight: 400;
-  line-height: 1.5;
-font-size: clamp(1.0625rem, 0.6806rem + 1.2222vw, 1.75rem);  
+  line-height: 1.2;
+font-size: clamp(1.1875rem, 1.1875rem + 0.375vw, 1.75rem);
 margin-top: 1rem;
 }
 
-.lead-reduced {
-  font-size: clamp(1.0625rem, 1.0625rem + 0.2vw, 1.3125rem);
-
-}
 .text-img {
   vertical-align: -.18em;
 }
@@ -80,8 +78,7 @@ margin-top: 1rem;
 }
 
 .sub {
-  font-size: clamp(1rem, 1.6vw, 1.4rem);
-  color: #334155;
+  font-size: clamp(1.1875rem, 1.1875rem + 0.375vw, 1.75rem);
 }
 
 .hyphens {
@@ -204,12 +201,28 @@ margin-top: 1rem;
   6. Hero Section
   ========================= */
 .hero {
-  min-height: calc(100vh - 81px);
+  min-height: calc(100svh - 81px);
+  padding-top: var(--global-section-padding);
+  padding-bottom: var(--global-section-padding);
   display: flex;
   align-items: center;
   justify-content: center;
 }
+.hero-ish {
+  min-height:fit-content;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  padding-bottom: var(--global-section-padding)!important;
+}
 .hero img {
+  border-radius: var(--global-radius);
+}
+
+.launcher {
+  background-color: white;
+  padding-top: var(--large-section-card-padding);
+  padding-bottom: var(--large-section-card-padding);
   border-radius: var(--global-radius);
 }
 
@@ -364,6 +377,14 @@ img.fade-in {
    min-height: 300px;
    object-fit: cover;
    object-position: 35%;
+  }
+}
+
+@media (max-width: 734px) {
+  .headline,.contact-copy {
+        margin-inline-start: auto;
+        margin-inline-end: auto;
+        width: 87.5%;
   }
 }
 
