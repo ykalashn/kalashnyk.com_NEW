@@ -1,73 +1,148 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Yevhenii Kalashnyk</title>
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="googlebot" content="noindex, nofollow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            margin: 0;
-            padding: 2rem;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        .cards {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            justify-content: center;
-        }
-        .card {
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            padding: 1.5rem;
-            width: 220px;
-            text-align: center;
-            transition: box-shadow 0.2s;
-        }
-        .card:hover {
-            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-        }
-        .card-title {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            font-weight: bold;
-        }
-        .download-btn {
-            display: inline-block;
-            padding: 0.5rem 1.2rem;
-            background: #0078d4;
-            color: #fff;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: background 0.2s;
-        }
-        .download-btn:hover {
-            background: #005fa3;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>From the T‑shirt Queue to Floor 21 — link hub</title>
+  <meta name="description" content="Working links to the Medium article ‘From the T‑shirt Queue to Floor 21 — it’s all about the team’. Includes durable fallbacks and archive backup." />
+  <meta property="og:title" content="From the T‑shirt Queue to Floor 21 — link hub" />
+  <meta property="og:description" content="Click to open the article on Medium via multiple durable URLs. If one fails, try the next." />
+  <meta property="og:type" content="website" />
+  <meta name="color-scheme" content="light dark" />
+  <style>
+    :root {
+      --bg: #0b0c0f;
+      --fg: #111214;
+      --text: #0b0c0f;
+      --muted: #5b6070;
+      --card: #ffffff;
+      --accent: #0066ff;
+      --accent-2: #00b894;
+      --ring: rgba(0, 102, 255, 0.35);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b0c0f;
+        --fg: #0f1115;
+        --text: #eaeef8;
+        --muted: #9aa3b2;
+        --card: #151821;
+        --accent: #4d8dff;
+        --accent-2: #3dd6a2;
+        --ring: rgba(77, 141, 255, 0.35);
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: linear-gradient(180deg, var(--bg), var(--fg));
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .wrap {
+      width: min(720px, 100%);
+    }
+    $1
+    .notice {margin: 10px 0 14px; padding: 10px 12px; border-radius: 12px; border:1px dashed rgba(128,128,128,.4); background: rgba(127,127,127,.08); font-size: 14px;}
+    .notice strong {letter-spacing: .2px;}
+    .archive-embed details{margin-top:12px}
+    .archive-embed object{width:100%; height:600px; border:1px solid rgba(128,128,128,.25); border-radius:12px; background:#fff}
+    @media (max-width: 640px){ .archive-embed object{height:420px} }
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(20px, 3.5vw, 28px);
+      letter-spacing: -0.2px;
+    }
+    p.lede { color: var(--muted); margin-top: 0; }
+    .btns { display: grid; gap: 12px; margin: 20px 0 8px; }
+    .btns a {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 10px; text-decoration: none; font-weight: 600;
+      border-radius: 14px; padding: 14px 16px; border: 1px solid transparent;
+      background: var(--accent); color: #fff;
+      transition: transform .06s ease, box-shadow .2s ease, background .2s ease;
+      box-shadow: 0 6px 16px var(--ring);
+    }
+    .btns a.secondary { background: transparent; color: var(--text); border-color: rgba(128,128,128,.35); }
+    .btns a.ghost { background: transparent; color: var(--text); border-color: transparent; }
+    .btns a:hover { transform: translateY(-1px); }
+    .meta { font-size: 13px; color: var(--muted); margin-top: 12px; }
+    details { margin-top: 8px; }
+    code { background: rgba(127,127,127,.15); padding: 2px 6px; border-radius: 6px; }
+    footer { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .pill { font-size: 12px; padding: 6px 10px; border-radius: 999px; border:1px solid rgba(128,128,128,.35); color: var(--muted); }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Typesets for printing</h1>
-        <div class="cards">
-            <div class="card">
-                <div class="card-title">REMARCQES</div>
-                <a class="download-btn" href="printog_1_typeset.pdf" download>Download</a>
-            </div>
-        </div>
-    </div>
+  <main class="wrap">
+    <section class="card" aria-labelledby="title">
+      $1
+      <div class="notice" role="note"><strong>Archived snapshot:</strong> this page includes a locally saved copy of the article for reliability. The original lives on Medium — open it via the <em>author profile</em> button below.</div>
+      <p class="lede">A durable link hub to the Medium article (multiple working routes + backup).</p>
+
+      <div class="btns" role="group" aria-label="Open article via:">
+        <!-- Primary: author path (avoids custom-domain redirect) -->
+        $1
+
+        <!-- Local archive download -->
+        <a class="secondary" target="_blank" rel="noopener noreferrer" href="assets/junction-article.webarchive" download>Open archived snapshot (download)</a>
+
+        <!-- Fallback 1: stable post ID -->
+        <a class="secondary" target="_blank" rel="noopener noreferrer" href="https://medium.com/p/5df4809204e1">Open via post ID</a>
+
+        <!-- Fallback 2: link.medium.com short link (bypasses some redirects) -->
+        <a class="secondary" target="_blank" rel="noopener noreferrer" href="https://link.medium.com/5df4809204e1">Open via share link</a>
+
+        <!-- Backup options -->
+        <a class="secondary" target="_blank" rel="noopener noreferrer" href="https://medium.com/@silvia.geier">Author profile (backup)</a>
+        <a class="secondary" target="_blank" rel="noopener noreferrer" href="https://web.archive.org/web/*/https://blog.hackjunction.com/from-the-t-shirt-queue-to-floor-21-its-all-about-the-team-5df4809204e1">Web Archive (search)</a>
+      </div>
+
+      <section class="archive-embed" aria-label="Archived snapshot">
+        <details>
+          <summary>View archived snapshot inline (Safari only)</summary>
+          <p class="meta">Most browsers can’t display <code>.webarchive</code> files inline. On Safari it should render below; otherwise use the download link above or the author profile.</p>
+          <object data="assets/junction-article.webarchive" type="application/x-webarchive">
+            <p>Can’t display the <code>.webarchive</code> here. <a href="assets/junction-article.webarchive" download>Download the archive</a> or open the author profile.</p>
+          </object>
+        </details>
+      </section>
+
+      <details>
+        <summary>What is this?</summary>
+        <p>This page exists because the publication’s custom domain <code>blog.hackjunction.com</code> sometimes returns an error. The links above open the same post using robust Medium URLs that usually avoid the broken redirect. If one path fails in the future, try the next.</p>
+      </details>
+
+      $1
+        <span class="pill">Archived snapshot</span>
+      </footer>
+      <p class="meta">Tip: in your portfolio, link to this hub page. If you later get a PDF export, add it here as an extra backup.</p>
+    </section>
+  </main>
+
+  <script>
+    (function() {
+      const btn = document.getElementById('copy');
+      const url = 'https://medium.com/p/5df4809204e1';
+      btn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(url);
+          btn.textContent = 'Copied stable link';
+          setTimeout(() => (btn.textContent = 'Copy stable link'), 1600);
+        } catch (_) {
+          // Fallback: make it selectable
+          const tmp = document.createElement('textarea');
+          tmp.value = url; document.body.appendChild(tmp); tmp.select();
+          document.execCommand('copy'); document.body.removeChild(tmp);
+          btn.textContent = 'Copied stable link';
+          setTimeout(() => (btn.textContent = 'Copy stable link'), 1600);
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
