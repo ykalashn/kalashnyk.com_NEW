@@ -18,7 +18,7 @@
     <a class="navbar-logo-link d-flex align-items-center justify-content-center mx-auto" href="about.html" >
       <img src="https://res.cloudinary.com/yevhenii-kalashnyk/image/upload/w_250,h_250/f_auto,q_auto/v1755963784/logo_trtynm.svg" alt="Logo" class="navbar-logo" />
     </a>
-    <a class="navbar-name-mobile fw-semibold d-lg-none" href="index.html">Yevhenii Kalashnyk</a>
+    <a class="navbar-name-mobile fw-semibold d-lg-none" href="https://kalashnyk.com">Yevhenii Kalashnyk</a>
     <button class="navbar-toggler custom-hamburger" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavCollapse" aria-controls="mainNavCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="custom-hamburger-icon">
         <span></span>
@@ -28,7 +28,7 @@
     <div class="collapse navbar-collapse" id="mainNavCollapse">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-4">
         <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="https://kalashnyk.com/about">About</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="${projectsHref}">Projects</a>
