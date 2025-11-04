@@ -15,7 +15,7 @@
       <span class="navbar-name">Yevhenii Kalashnyk</span>
     </a>
     <!-- Logo left, name center, hamburger right on mobile -->
-    <a class="navbar-logo-link d-flex align-items-center justify-content-center mx-auto" href="about.html" >
+    <a class="navbar-logo-link d-flex align-items-center justify-content-center mx-auto" href="https://kalashnyk.com/about" >
       <img src="https://res.cloudinary.com/yevhenii-kalashnyk/image/upload/w_250,h_250/f_auto,q_auto/v1755963784/logo_trtynm.svg" alt="Logo" class="navbar-logo" />
     </a>
     <a class="navbar-name-mobile fw-semibold d-lg-none" href="https://kalashnyk.com">Yevhenii Kalashnyk</a>
