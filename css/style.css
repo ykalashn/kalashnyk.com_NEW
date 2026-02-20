@@ -518,3 +518,105 @@ img.fade-in {
     background: transparent;
   }
 }
+
+/* UGC platform section */
+.ugc-section {
+  padding-top: calc(var(--global-section-padding));
+  padding-bottom: calc(var(--global-section-padding));
+}
+
+.ugc-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.25rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.ugc-grid img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  border-radius: calc(var(--global-radius) / 2);
+  background: #fff;
+  padding: 0.5rem;
+}
+
+/* UGC carousel */
+.ugc-carousel-img {
+  max-height: 360px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  padding: 1rem 0;
+  background: none;
+  border-radius: calc(var(--global-radius) / 2) !important;
+}
+
+#ugcCarousel .carousel-control-prev-icon,
+#ugcCarousel .carousel-control-next-icon {
+  filter: invert(1) grayscale(100);
+}
+
+/* Game overlay */
+.game-overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 5000;
+}
+
+.game-overlay.is-open {
+  display: block;
+}
+
+.game-overlay__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(12px);
+}
+
+.game-overlay__content {
+  position: relative;
+  z-index: 1;
+  width: min(1200px, 92vw);
+  height: min(720px, 80vh);
+  margin: 5vh auto 0;
+  background: #0b1220;
+  border-radius: 1rem;
+  box-shadow: 0 20px 80px rgba(0,0,0,0.35);
+  overflow: hidden;
+}
+
+.game-overlay__frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  background: #0b1220;
+}
+
+.game-overlay__close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(255,255,255,0.85);
+  color: #0f172a;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* Team photos: force circular crop */
+.team-photo {
+  border-radius: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+}
