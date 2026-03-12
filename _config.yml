@@ -4,7 +4,6 @@ baseurl: ""
 permalink: /:basename/
 
 exclude:
-  - tower-defence
   - prepros.config
   - Gemfile
   - Gemfile.lock
