@@ -148,19 +148,4 @@ extra_scripts_include: about-scripts.html
     </div>
   </section>
 
-  <!-- CTA -->
-  <!-- Contact section -->
-  <section class="py-5" id="contact">
-    <div class="container text-center">
-      <h2 class="h3 mb-3">Let’s grab a coffee?</h2>
-      <p class="text-secondary mb-4 contact-copy">Email me, connect on LinkedIn or GitHub.</p>
-      <div class="d-flex flex-wrap gap-2 justify-content-center">
-        <a class="btn btn-dark rounded-pill" href="mailto:hello@kalashnyk.com"><i
-            class="bi bi-envelope me-1"></i>Email</a>
-        <a class="btn btn-outline-dark rounded-pill" target="_blank" rel="noreferrer"
-          href="https://www.linkedin.com/in/ykalashn"><i class="bi bi-linkedin me-1"></i>LinkedIn</a>
-        <a class="btn btn-outline-dark rounded-pill" target="_blank" rel="noreferrer"
-          href="https://github.com/ykalashn"><i class="bi bi-github me-1"></i>GitHub</a>
-      </div>
-    </div>
-  </section>
+  {% include contact.html section_class="py-5" title="Let's grab a coffee?" subtitle="Email me, connect on LinkedIn or GitHub." %}

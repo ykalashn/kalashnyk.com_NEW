@@ -1,6 +1,7 @@
 title: Yevhenii Kalashnyk
 url: https://www.kalashnyk.com
 baseurl: ""
+permalink: /:basename/
 
 exclude:
   - tower-defence
