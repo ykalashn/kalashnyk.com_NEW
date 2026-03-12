@@ -1,0 +1,92 @@
+<style>
+  :root {
+    --about-text-height: 500px;
+  }
+
+  .timeline {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 900px;
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-bottom: 2.5rem;
+  }
+
+  .timeline-point {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-50%);
+    background-color: var(--brand-highlight);
+    border: 0.7px solid var(--brand-ink);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    z-index: 1;
+    padding: 0;
+  }
+
+  .timeline-line {
+    position: absolute;
+    top: 20px;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-0.5px);
+    width: 1px;
+    background-image: linear-gradient(var(--brand-ink) 60%, rgba(0, 0, 0, 0) 0);
+    background-size: 1px 8px;
+    background-repeat: repeat-y;
+    z-index: 0;
+  }
+
+  .timeline-item:last-child .timeline-line {
+    display: none;
+  }
+
+  .timeline-content {
+    padding: 0 2rem;
+  }
+
+  .timeline-date {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: var(--brand-accent);
+  }
+
+  .timeline-role {
+    font-weight: 700;
+    margin-top: 0.25rem;
+  }
+
+  .timeline-where {
+    margin-bottom: 0.75rem;
+  }
+
+  .timeline-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+  }
+
+  .timeline-item.reveal {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+<script>
+  function adjustAboutImgHeight() {
+    var text = document.getElementById('about-text');
+    var img = document.querySelector('.about-img-special');
+    if (text && img) {
+      var height = text.offsetHeight;
+      img.style.maxHeight = height + 'px';
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', adjustAboutImgHeight);
+  window.addEventListener('resize', adjustAboutImgHeight);
+</script>

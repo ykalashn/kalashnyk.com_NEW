@@ -1,0 +1,10 @@
+title: Yevhenii Kalashnyk
+url: https://www.kalashnyk.com
+baseurl: ""
+
+exclude:
+  - tower-defence
+  - prepros.config
+  - Gemfile
+  - Gemfile.lock
+  - README.md
